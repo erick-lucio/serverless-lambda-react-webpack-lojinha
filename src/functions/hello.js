@@ -1,5 +1,5 @@
 exports.handler = async event => {
-  require("../database");
+  require("../database/index");
   const Products = require("../models/Products");
   const fs = require("fs");
   const path = require("path")
