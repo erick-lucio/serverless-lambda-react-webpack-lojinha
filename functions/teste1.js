@@ -1,6 +1,7 @@
-exports.handler = function(event, context, callback) {
-    callback(null, {
-    statusCode: 200,
-    body: "Hello, World"
-    });
+exports.handler = async event =>{
+    const subject = event.queryStringParameters.name || "world"
+    return{
+        statusCose:200,
+        body:'alo ${subject}'
+    }
 }
