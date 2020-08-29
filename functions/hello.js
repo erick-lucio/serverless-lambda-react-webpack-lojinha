@@ -2,7 +2,7 @@ exports.handler = async event => {
   const subject = event.queryStringParameters.name || 'World'
   return {
     statusCode: 200,
-    body: JSON({
+    body: JSON.parse({
       message: "Hello there",
       status:"Can you hear me?"
     }),
