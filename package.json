@@ -1,25 +1,33 @@
 {
-  "name": "netlify-fauna",
+  "name": "ziroWebStore",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@analytics/google-analytics": "^0.3.1",
-    "analytics": "^0.3.5",
     "faunadb": "^2.13.1",
-    "markdown-magic": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.1.1"
   },
   "scripts": {
-    "bootstrap": "netlify dev:exec node ./scripts/bootstrap-fauna-database.js",
+    "bootstrap": "netlify dev:exec node ./scripts/start_db.js",
     "docs": "md-magic --path '**/*.md' --ignore 'node_modules'",
-    "start": "netlify dev",
+    "start": "webpack-dev-server --open --mode development",    
     "prebuild": "echo 'setup faunaDB' && npm run bootstrap",
-    "build": "react-scripts build"
+	  "build": "webpack --mode production"
+    
   },
   "devDependencies": {
-    "netlify-cli": "^2.19.0"
+    "netlify-cli": "^2.19.0",
+	"@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "html-loader": "^1.3.0",
+    "html-webpack-plugin": "^4.4.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   },
   "browserslist": [
     ">0.2%",
