@@ -11,7 +11,7 @@ ${subject}
 exports.handler = async (event, context) => {
   /* configure faunaDB Client with our secret */
   const subject = event.queryStringParameters.name || "world"
-  console.log("subject - :",subject)
+  console.log("subject - : " + subject)
   const client = new faunadb.Client({
     secret: process.env.SECRET_KEY_FAUNA
   }) 
