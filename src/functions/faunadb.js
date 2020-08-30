@@ -1,9 +1,11 @@
+const faunadb = require('faunadb' )
+
+
+const faunaQuery = faunadb.query
+const client = new faunadb.Client({
+  secret: "fnAD0ed20pACEsNDucZcac2u4agRQ3cNIU-2O71V"
+})
 exports.handler = async event => {
-    import faunadb from 'faunadb' 
-    const faunaQuery = faunadb.query
-    const client = new faunadb.Client({
-    secret: "fnAD0ed20pACEsNDucZcac2u4agRQ3cNIU-2O71V"
-    })
     faunaQuery.CreateCollection
     return client.query(faunaQuery.Create(faunaQuery.Ref("classes/todos"), todoItem))
     .then((response) => {
