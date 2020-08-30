@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "sequelize": "^6.3.4"
+    "faunadb": "^3.0.1"   
+  },
+  "devDependencies": {
+    "netlify-lambda": "^2.0.1"
   }
 }
