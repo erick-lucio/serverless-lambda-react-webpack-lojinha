@@ -13,8 +13,8 @@ exports.handler = async event => {
     secret: process.env.SECRET_KEY_FAUNA
   }) 
   //const id = getId(event.path)
-  console.log(`Function 'todo-read' invoked. Read id: 2}`)
-  return client.query(q.Get(q.Ref(`classes/todos/2`)))
+  console.log(`Function 'todo-read' invoked. Read id: id}`)
+  return client.query(q.Get(q.Ref(`classes/todos/id`)))
     .then((response) => {
       console.log('success', response)
       return {

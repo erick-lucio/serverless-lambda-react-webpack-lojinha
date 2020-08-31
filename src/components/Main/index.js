@@ -1,12 +1,31 @@
 import React from 'react';
 
-import { div1 } from './styles';
-
+import { Container,ProductDiv,Text,Button } from './styles';
+import dressImg from '../../assets/imgs/pink-dress.jpg'
 const Main = () => {
+  const array = [{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},
+  {name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"}];
   return (
-    <div1>
-      <h1>Main</h1>
-    </div1>
+    <Container>
+      {array.map((obj)=>{
+        return (  
+          <ProductDiv>
+            <img src={dressImg} style={{height: 150,width: 120,cursor:"pointer"}}></img>
+            <Text fontsize={2}>
+               Vestido{obj.name}
+            </Text>
+            <Text fontsize={1.5}>
+              R$:63,69
+            </Text>
+            <Button onClick={()=>alert("Produto Adicionado ao carrinho")}>
+              <Text fontsize={1.5}>
+                Adicionar ao Carrinho
+              </Text>
+            </Button>
+        </ProductDiv>)
+      })}
+
+    </Container>
   );
 };
 
