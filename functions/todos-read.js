@@ -3,7 +3,7 @@ const faunadb = require('faunadb')
 const getId = require('./utils/getId')
 const q = faunadb.query
 
-exports.handler = (event, context) => {
+exports.handler = async event => {
   /* configure faunaDB Client with our secret */
   console.log("event path : "+event.path)
   const subject = event.queryStringParameters.name || "world"

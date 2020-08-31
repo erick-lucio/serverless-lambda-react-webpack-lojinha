@@ -3,7 +3,7 @@ const faunadb = require('faunadb')
 const q = faunadb.query
 //SECRET_KEY_FAUNA
 /* export our lambda function as named "handler" export */
-exports.handler = async (event, context) => {
+exports.handler = async event => {
   const subject = event.queryStringParameters.name || "world"
   console.log("subject - : " + subject)
   /* configure faunaDB Client with our secret */

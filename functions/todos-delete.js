@@ -8,7 +8,7 @@ exports.handler = async event =>{
 ${subject}
 */
 
-exports.handler = async (event, context) => {
+exports.handler = async event => {
   /* configure faunaDB Client with our secret */
   const subject = event.queryStringParameters.name || "world"
   console.log("subject - : " + subject)

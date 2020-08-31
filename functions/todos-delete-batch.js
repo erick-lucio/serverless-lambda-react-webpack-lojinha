@@ -2,11 +2,13 @@
 const faunadb = require('faunadb')
 const q = faunadb.query
 
-exports.handler = async (event, context) => {
+exports.handler = async event => {
   /* configure faunaDB Client with our secret */
   const client = new faunadb.Client({
     secret: process.env.SECRET_KEY_FAUNA
   }) 
+  const subject = event.queryStringParameters.name || "world"
+  console.log("subject - : " + subject)
   const data = JSON.parse(event.body)
   console.log('data', data)
   console.log('Function `todo-delete-batch` invoked', data.ids)
