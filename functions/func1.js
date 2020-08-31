@@ -2,10 +2,10 @@
 const faunadb = require('faunadb')
 
 const q = faunadb.query
+exports.handler = async event => {
+  const subject = event.queryStringParameters.name || 'World'
+      
 
-exports.handler = (event, context) => {
-  
-  const subject = event.queryStringParameters.name || "world"
   
  
   const client = new faunadb.Client({
@@ -13,12 +13,13 @@ exports.handler = (event, context) => {
   }) 
 
   
-  return {
-    statusCode: 200,  
-    body: 
-     JSON.stringify({
-        message:"Hello there",
-        status:"Can you hear me?"
-    }),
+    return {
+      statusCode: 200,  
+      body: 
+       JSON.stringify({
+          message:subject,
+          status:event.path
+      }),
+    }
   }
-}
+
