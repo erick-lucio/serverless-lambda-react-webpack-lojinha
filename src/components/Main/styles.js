@@ -31,5 +31,9 @@ export const Text = styled.span`
     font-size:${props=>props.fontsize}rem;
 `;
 export const Button = styled.button`
-
+    border: none;
+    margin-top:10px;
+    align-self: flex-start;
+    margin-left:15px;
+    background-color:inherit;
 `;

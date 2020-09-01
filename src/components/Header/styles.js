@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Link} from 'react-router-dom'
 
 export const Container = styled.div`
     height:20%;
@@ -10,6 +11,23 @@ export const Container = styled.div`
 export const Div = styled.div`
 
 
+`;
+export  const StyledLink = styled(Link)`
+    display:flex;
+    text-align:center;
+    flex-direction:column;
+    padding-right:50px;
+    text-decoration:none;
+    color:rgb(55,44,34);
+    &:hover {
+    color: 'none';
+    }
+    &:visited {
+        color: 'none';
+    }
+    &:active  {
+        color: 'none';
+    }
 `;
 export const ImgPlace = styled.div`
     background-image: url(${props=>props.src});
