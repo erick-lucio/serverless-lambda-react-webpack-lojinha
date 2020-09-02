@@ -9,10 +9,11 @@ import {context1} from '../../Context'
 const Main = () => {
   const {stateCounter,dispatchCounter}=useContext(context1)
   const {stateProducts, dispatchProducts}=useContext(context1)
+  const {stateCart, dispatchCart}=useContext(context1)
   console.log(stateProducts)
   
-  const array = [{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},
-  {name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"}];
+  const array = [{name:"erick",cep:"mateuzim"},{name:"marcao",cep:"mateuzim"},{name:"lucqaas",cep:"mateuzim"},{name:"cavalo",cep:"mateuzim"},{name:"alan",cep:"mateuzim"},{name:"adam",cep:"mateuzim"},{name:"camaluto",cep:"mateuzim"},
+  {name:"elsnru",cep:"mateuzim"},{name:"oipaeu",cep:"mateuzim"},{name:"paganois",cep:"mateuzim"},{name:"pagaeuno",cep:"mateuzim"},{name:"taquasela",cep:"mateuzim"},{name:"opafalacomigmeu",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"}];
   useEffect(()=>{
     //Da um get  e pega o id de produtos e o joga pro reducer
     dispatchProducts({type:'Clear'})
@@ -22,8 +23,9 @@ const Main = () => {
     });
     },[])
 
-  const addToCart = (name,imgPath) =>{
+  const addToCart = (name,imgPath,price) =>{
     dispatchCounter({type: 'increment'})
+    dispatchCart({type: 'CartAdd',product_name:name,product_price:price,img_path:imgPath})
   }
   
   return (
@@ -39,7 +41,7 @@ const Main = () => {
             <Text fontsize={1.5} style={{marginTop:10}}>
               R$:63,69
             </Text>
-            <Button onClick={()=>addToCart("alo","opa")}>
+            <Button onClick={()=>addToCart(obj.name,"imgPath",53)}>
               <Text fontsize={1.5}>
                 <img src={shopCart} style={{height: 60,width: "auto",cursor:"pointer"}}></img>
               </Text>

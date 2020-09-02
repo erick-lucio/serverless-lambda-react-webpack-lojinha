@@ -7,23 +7,22 @@ import {Link} from 'react-router-dom'
 import {context1} from '../../Context'
 const Header = () => {
   const {stateCounter,dispatchCounter}=useContext(context1)
-    
-   const array = [{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},
-  {name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"}];
+  const {stateCart, dispatchCart}=useContext(context1)  
+  const {increment, decrement}=useContext(context1)  
+  
   useEffect(()=>{
     //Da um get  e pega o id de produtos e o joga pro reducer
 
-    array.forEach(element => {
-      //dispatch({type: 'ProductAdd',product_name:element.name,product_price:34545,img_path:"dfdf"})  
-    });
+
   },[])
   return (
-    <Container>      
+    <Container>   
+      
       <Link to="">
          <img style={{height: 130,width: "auto",marginLeft:"10px",cursor:"pointer"}} src={StoreImgIcon}></img>
       </Link>
       
-      <Text fontsize={3.5} onClick={()=>console.log(stateCounter)}>Erick Web Store</Text>
+      <Text fontsize={3.5} onClick={()=>console.log(stateCounter,stateCart)}>Erick Web Store</Text>
       <StyledLink to="/cart">
           <Text fontsize={2}>{stateCounter.count}</Text>
           <img style={{height: 70,width: "auto",cursor:"pointer"}} src={MarketBox}></img>

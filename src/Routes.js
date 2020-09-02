@@ -13,12 +13,15 @@ import Cart from './components/Cart/index.js'
 import Header from './components/Header/index.js'
 import {context1} from './Context'
 import {reducerCart,reducerProducts,reducerCounter,estadoInicialCart,estadoInicialCounter,estadoInicialProducts} from './Redux'
+import {useCounter} from './useCounter'
 export default function Routes() {
   const [stateCounter, dispatchCounter] = useReducer(reducerCounter,estadoInicialCounter);  
   const [stateProducts, dispatchProducts] = useReducer(reducerProducts,estadoInicialProducts);  
   const [stateCart, dispatchCart] = useReducer(reducerCart,estadoInicialCart);  
+ 
   const history = createBrowserHistory();
-
+  //custom hook
+ 
    
   return (
     <HashRouter history={history}>
