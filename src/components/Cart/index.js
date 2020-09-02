@@ -3,9 +3,10 @@ import React,{useEffect,useState,useReducer} from 'react';
 import { Container ,Text,ItensDiv,Button} from './styles';
 import dressImg from '../../assets/imgs/pink-dress.jpg'
 import removeIcon from '../../assets/icons/icons8-remove-64.png'
+import {context1} from '../../Context'
 
 const Cart = () => {
-  
+
   const array = [{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},
   {name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"}];
   return (
