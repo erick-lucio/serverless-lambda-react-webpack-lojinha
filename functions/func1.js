@@ -19,7 +19,6 @@ exports.handler = async event => {
        JSON.stringify({
           message:subject,
           status:event.path,
-          t1:event,
           t2:event.body
       }),
     }
