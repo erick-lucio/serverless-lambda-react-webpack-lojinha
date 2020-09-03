@@ -38,7 +38,7 @@ const Main = () => {
             <Text fontsize={2} style={{marginTop:10}}>
                Vestido{obj.name}
             </Text>
-            <Text fontsize={1.5} style={{marginTop:10}}>
+            <Text fontsize={1.5} style={{marginTop:10,alignSelf:"flex-start",paddingLeft:"20px",color:"#373040"}}>
               R$:63,69
             </Text>
             <Button onClick={()=>addToCart(obj.name,"imgPath",53)}>

@@ -18,15 +18,18 @@ const Cart = () => {
 
   },[stateCart])
   const removeProduct = (productName) =>{
+    //P evitar bug no filter usar um id q n se repete
     dispatchCounter({type: 'decrement'})
     dispatchCart({type: 'CartRemove',product_name:productName})
-    alert(productName+" Removido do carrinho")
+   // console.log(productName+" Removido do carrinho")
   }
   return (
     <Container>
-      
-      <Text fontsize={4}>Produtos no Carrinho</Text>
-      {stateCart.cart_products.map((cart_obj,key)=>{
+      {stateCart.cart_products.length == 0?
+       <Text fontsize={4}>Carrinho Vazio</Text>
+       :<>
+        <Text fontsize={4}>Produtos no Carrinho</Text>
+        {stateCart.cart_products.map((cart_obj,key)=>{
         return(
           <ItensDiv key={key}>
             <img src={dressImg} style={{height: 120,width: "auto"}}></img>
@@ -35,10 +38,16 @@ const Cart = () => {
 
           </ItensDiv>
         )
-      })}
-      <Button onClick={()=>alert("Compra Finalizada")}>
-        <Text fontsize={2}>Finalizar Compra</Text>
-      </Button>
+        })}
+        <Button onClick={()=>alert("Compra Finalizada")}>
+          <Text fontsize={2}>Finalizar Compra</Text>
+        </Button>
+       </>
+       }
+      
+
+      
+
     </Container>
   );
 };

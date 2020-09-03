@@ -49,9 +49,11 @@ export function reducerCart(state, action) {
           img_path: action.img_path       
         }, 
           ...state.cart_products]}
-      case 'CartRemove':          
+      case 'CartRemove':        
+ 
       return {
         ...state,
-        cart_products: state.cart_products.filter(item => item.name != action.product_name)}
+        cart_products: state.cart_products.filter(item => item.name !== action.product_name)
+      }
   }
 }
