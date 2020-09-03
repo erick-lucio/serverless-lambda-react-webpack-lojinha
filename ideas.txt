@@ -1,0 +1,11 @@
+1 tabela dos produtos
+1 tabelas da compras realizadas
+
+
+/////////////
+
+rotas get todos os produtos
+rota post enviando compra realizada
+rota get retornando todas as compras
+rota get de um produto especifico + uma pagina deste produto no front // se der tempo
+deixar o front bonito

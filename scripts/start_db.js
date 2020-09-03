@@ -8,7 +8,7 @@ const q = faunadb.query
 if (process.env.SECRET_KEY_FAUNA) {
   createFaunaDB(process.env.SECRET_KEY_FAUNA).then(() => {
     console.log('Fauna Database Criado')
-    co
+    
   })
 }
 
@@ -20,7 +20,10 @@ function createFaunaDB(key) {
   })
 
   /* Schemma */
-  return client.query(q.Create(q.Ref('classes'), { name: 'products' }))
+  return client.query(
+    q.Create(q.Ref('classes'), { 
+      name: 'products' 
+    }))
     .then(() => {
       return client.query(
         q.Create(q.Ref('indexes'), {

@@ -13,7 +13,7 @@ export const Container = styled.div`
 export const ProductDiv = styled.div`
     width: 40px;
     margin-top:50px;   
-    flex:1 2 200px;
+    flex:1 1 250px;
     display:flex;
     flex-direction:column;
     border:0.5px solid rgba(1,2,3,0.5);
@@ -24,6 +24,7 @@ export const ProductDiv = styled.div`
     background-image:linear-gradient(to top,rgba(255,165,0,0.1),rgba(255,255,0,0.1));
     padding-bottom:20px;
     padding-top:40px;
+    
 `;
 
 export const Text = styled.span`
@@ -32,8 +33,9 @@ export const Text = styled.span`
 `;
 export const Button = styled.button`
     border: none;
-    margin-top:10px;
+    
     align-self: flex-start;
     margin-left:15px;
     background-color:inherit;
+    justify-content:flex-end;
 `;

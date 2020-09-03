@@ -34,14 +34,14 @@ const Main = () => {
       {stateProducts.objects_products.map((obj,key)=>{
         return (  
           <ProductDiv key={key}>
-            <img src={dressImg} style={{height: 150,width: 120}}></img>
-            <Text fontsize={2} style={{marginTop:10}}>
-               Vestido{obj.name}
+            <img src={dressImg} style={{height: "40%",width: 120}}></img>
+            <Text fontsize={2} style={{marginTop:10,overflowWrap:"anywhere",textAlign:"center",height:"40%"}}>
+               Vestido {obj.name}
             </Text>
-            <Text fontsize={1.5} style={{marginTop:10,alignSelf:"flex-start",paddingLeft:"20px",color:"#373040"}}>
+            <Text fontsize={1.5} style={{marginTop:10,alignSelf:"flex-start",paddingLeft:"20px",color:"#373040",height:"10%"}}>
               R$:63,69
             </Text>
-            <Button onClick={()=>addToCart(obj.name,"imgPath",53)}>
+            <Button onClick={()=>addToCart(obj.name,"imgPath",53) } style={{marginButtom:"0",height:"auto"}}>
               <Text fontsize={1.5}>
                 <img src={shopCart} style={{height: 60,width: "auto",cursor:"pointer"}}></img>
               </Text>
