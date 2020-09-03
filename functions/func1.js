@@ -4,7 +4,7 @@ const faunadb = require('faunadb')
 const q = faunadb.query
 exports.handler = async event => {
   const subject = event.queryStringParameters.name || 'World'
-      
+  
 
   
  
@@ -18,7 +18,9 @@ exports.handler = async event => {
       body: 
        JSON.stringify({
           message:subject,
-          status:event.path
+          status:event.path,
+          t1:event,
+          t2:event.body
       }),
     }
   }
