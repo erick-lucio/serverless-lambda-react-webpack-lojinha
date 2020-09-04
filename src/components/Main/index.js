@@ -16,12 +16,9 @@ const Main = () => {
   {name:"elsnru",cep:"mateuzim"},{name:"oipaeu",cep:"mateuzim"},{name:"paganois",cep:"mateuzim"},{name:"pagaeuno",cep:"mateuzim"},{name:"taquasela",cep:"mateuzim"},{name:"opafalacomigmeu",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"}];
   useEffect(()=>{
     //Da um get  e pega o id de produtos e o joga pro reducer
-    fetch('/.netlify/functions/read-all-products')
-    .then((response)=>{
-      response.json()
-    })
-    .then((body)=>{
-      console.log(body)
+    fetch('/.netlify/functions/read-all-products').
+    then((response)=>{
+      console.log(response)
     })
     
     dispatchProducts({type:'Clear'})
