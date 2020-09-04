@@ -11,10 +11,10 @@ const Main = () => {
   const {stateCart, dispatchCart}=useContext(context1)
 
   function readAllProducts(){
-     fetch('/.netlify/functions/read-all-products')
+     return fetch('/.netlify/functions/read-all-products')
       .then(response => {
         console.log("resp",response.json())
-        return response.json()
+        
       })
       .then(body => {
         console.log("body",body)
