@@ -16,11 +16,11 @@ const Main = () => {
   {name:"elsnru",cep:"mateuzim"},{name:"oipaeu",cep:"mateuzim"},{name:"paganois",cep:"mateuzim"},{name:"pagaeuno",cep:"mateuzim"},{name:"taquasela",cep:"mateuzim"},{name:"opafalacomigmeu",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"}];
   useEffect(()=>{
     //Da um get  e pega o id de produtos e o joga pro reducer
-    let products_array = fetch('/.netlify/functions/read-all-products')
+    fetch('/.netlify/functions/read-all-products')
       .then((response) => {
-        return response.json()
+        return console.log(response.json())
     })
-    console.log(products_array)
+    
     dispatchProducts({type:'Clear'})
     array.forEach(element => {
       
