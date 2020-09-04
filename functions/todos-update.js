@@ -1,5 +1,5 @@
 const faunadb = require('faunadb')
-const getId = require('./utils/getId')
+
 const q = faunadb.query
 
 exports.handler = async event => {
