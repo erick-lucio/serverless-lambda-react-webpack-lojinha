@@ -10,7 +10,7 @@ exports.handler = async event => {
     secret: process.env.SECRET_KEY_FAUNA
   }) 
   const data = JSON.parse(event.body)
-  const id = getId(event.path)
+  const id = event.queryStringParameters.id
   console.log(`Function 'todo-update' invoked. update id: ${id}`)
   return client.query(q.Update(q.Ref(`classes/todos/${id}`), {data}))
     .then((response) => {

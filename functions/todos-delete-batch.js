@@ -7,11 +7,7 @@ exports.handler = async event => {
   const client = new faunadb.Client({
     secret: process.env.SECRET_KEY_FAUNA
   }) 
-  const subject = event.queryStringParameters.name || "world"
-  console.log("subject - : " + subject)
-  const data = JSON.parse(event.body)
-  console.log('data', data)
-  console.log('Function `todo-delete-batch` invoked', data.ids)
+  const id = event.queryStringParameters.id
   // construct batch query from IDs
   const deleteAllCompletedTodoQuery = data.ids.map((id) => {
     return q.Delete(q.Ref(`classes/todos/${id}`))
