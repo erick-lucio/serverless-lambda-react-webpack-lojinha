@@ -15,8 +15,7 @@ exports.handler = async event => {
   console.log('Function `todo-create` invoked', data)
   const todoItem = {
     data: data
-  }
-  console.log(todoItem)
+  }  
   /* construct the fauna query */
   return client.query(q.Create(q.Ref('classes/purchases'), todoItem))
     .then((response) => {
