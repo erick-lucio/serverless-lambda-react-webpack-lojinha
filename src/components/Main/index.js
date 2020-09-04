@@ -18,11 +18,9 @@ const Main = () => {
     //Da um get  e pega o id de produtos e o joga pro reducer
     fetch('/.netlify/functions/read-all-products').
     then((response)=>{
-      return response.json()
-        .then((json)=>{
-          
-          return json
-        })
+      console.log(JSON.parse(response))
+      return JSON.parse(response)
+
     })
     
     dispatchProducts({type:'Clear'})
