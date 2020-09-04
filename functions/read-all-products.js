@@ -11,7 +11,7 @@ exports.handler = async event => {
   const client = new faunadb.Client({
     secret: process.env.SECRET_KEY_FAUNA
   }) 
-  return client.query(q.Paginate(q.Match(q.Ref('indexes/all_todos'))))
+  return client.query(q.Paginate(q.Match(q.Ref('indexes/products_index'))))
     .then((response) => {
       const todoRefs = response.data
       console.log('Todo refs', todoRefs)
