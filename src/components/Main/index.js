@@ -10,18 +10,16 @@ const Main = () => {
   const {stateProducts, dispatchProducts}=useContext(context1)
   const {stateCart, dispatchCart}=useContext(context1)
 
-  async function readAllProducts(){
-     const response = await fetch('/.netlify/functions/read-all-products')
-     const data = await response.json()
-     return data
 
-  }
   
   const array = [{name:"erick",cep:"mateuzim"},{name:"marcao",cep:"mateuzim"},{name:"lucqaas",cep:"mateuzim"},{name:"cavalo",cep:"mateuzim"},{name:"alan",cep:"mateuzim"},{name:"adam",cep:"mateuzim"},{name:"camaluto",cep:"mateuzim"},
   {name:"elsnru",cep:"mateuzim"},{name:"oipaeu",cep:"mateuzim"},{name:"paganois",cep:"mateuzim"},{name:"pagaeuno",cep:"mateuzim"},{name:"taquasela",cep:"mateuzim"},{name:"opafalacomigmeu",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"}];
   useEffect(()=>{
     //Da um get  e pega o id de produtos e o joga pro reducer
-    console.log(readAllProducts())
+    fetch('/.netlify/functions/read-all-products').
+    then((response)=>{
+      console.log(response.json)
+    })
     
     dispatchProducts({type:'Clear'})
     array.forEach(element => {
