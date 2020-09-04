@@ -13,10 +13,12 @@ const Main = () => {
   function readAllProducts(){
      fetch('/.netlify/functions/read-all-products')
       .then(response => {
-        response.json()
+        console.log("resp",response.json())
+        return response.json()
       })
       .then(body => {
-        return body.json()
+        console.log("body",body)
+        return body
       })
   }
   
