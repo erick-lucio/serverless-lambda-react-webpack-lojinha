@@ -9,9 +9,13 @@ const Main = () => {
   const {stateCounter,dispatchCounter}=useContext(context1)
   const {stateProducts, dispatchProducts}=useContext(context1)
   const {stateCart, dispatchCart}=useContext(context1)
+
   function readAllProducts(){
     return fetch('/.netlify/functions/read-all-products').then((response) => {
       return response.json()
+        .then((data)=>{
+          return data
+        })
     })
   }
   
