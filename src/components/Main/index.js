@@ -10,12 +10,20 @@ const Main = () => {
   const {stateProducts, dispatchProducts}=useContext(context1)
   const {stateCart, dispatchCart}=useContext(context1)
 
-  function test1(){
-    return    fetch('/.netlify/functions/read-all-products')
+  function getAllProducts(){
+    return fetch('/.netlify/functions/read-all-products')
     .then((response)=>{
       return response.json()
-        .then((json)=>{
-          console.log(json)
+        .then((json)=>{         
+          return json
+        })
+    })
+  }
+  function getAllPurchases(){
+    return fetch('/.netlify/functions/read-all-purchases')
+    .then((response)=>{
+      return response.json()
+        .then((json)=>{         
           return json
         })
     })
@@ -26,10 +34,15 @@ const Main = () => {
   useEffect(()=>{
     //Da um get  e pega o id de produtos e o joga pro reducer
  
-    test1()
+    getAllProducts()
       .then((response)=>{
         console.log(response)
       })
+       
+    getAllPurchases()
+    .then((response)=>{
+      console.log(response)
+    })
     dispatchProducts({type:'Clear'})
     array.forEach(element => {
       
