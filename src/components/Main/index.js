@@ -19,7 +19,7 @@ const Main = () => {
   {name:"elsnru",cep:"mateuzim"},{name:"oipaeu",cep:"mateuzim"},{name:"paganois",cep:"mateuzim"},{name:"pagaeuno",cep:"mateuzim"},{name:"taquasela",cep:"mateuzim"},{name:"opafalacomigmeu",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"}];
   useEffect(()=>{
     //Da um get  e pega o id de produtos e o joga pro reducer
-    console.log(readAllProducts)
+    console.log(readAllProducts())
     
     dispatchProducts({type:'Clear'})
     array.forEach(element => {
