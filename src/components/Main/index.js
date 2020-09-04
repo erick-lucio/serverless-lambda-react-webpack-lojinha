@@ -26,7 +26,10 @@ const Main = () => {
   useEffect(()=>{
     //Da um get  e pega o id de produtos e o joga pro reducer
  
-    console.log(test1())
+    test1()
+      .then((response)=>{
+        console.log(response)
+      })
     dispatchProducts({type:'Clear'})
     array.forEach(element => {
       
