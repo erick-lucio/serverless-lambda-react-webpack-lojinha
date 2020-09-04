@@ -10,16 +10,11 @@ const Main = () => {
   const {stateProducts, dispatchProducts}=useContext(context1)
   const {stateCart, dispatchCart}=useContext(context1)
 
-  function readAllProducts(){
-     return fetch('/.netlify/functions/read-all-products')
-      .then(response => {
-        console.log("resp",response.json())
-        
-      })
-      .then(body => {
-        console.log("body",body)
-        return body
-      })
+  async function readAllProducts(){
+     const response = await fetch('/.netlify/functions/read-all-products')
+     const data = await response.json()
+     return data
+
   }
   
   const array = [{name:"erick",cep:"mateuzim"},{name:"marcao",cep:"mateuzim"},{name:"lucqaas",cep:"mateuzim"},{name:"cavalo",cep:"mateuzim"},{name:"alan",cep:"mateuzim"},{name:"adam",cep:"mateuzim"},{name:"camaluto",cep:"mateuzim"},
