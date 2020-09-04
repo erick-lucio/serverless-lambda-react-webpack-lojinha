@@ -1,10 +1,9 @@
 import React,{useEffect,useState,useReducer,useContext} from 'react';
-
 import { Container,ProductDiv,Text,Button } from './styles';
 import dressImg from '../../assets/imgs/pink-dress.jpg'
 import shopCart from '../../assets/icons/icons8-add-shopping-cart-64.png'
 import {context1} from '../../Context'
-
+import {reallAllProducts} from '../../utils/api'
 
 const Main = () => {
   const {stateCounter,dispatchCounter}=useContext(context1)
@@ -16,15 +15,7 @@ const Main = () => {
   {name:"elsnru",cep:"mateuzim"},{name:"oipaeu",cep:"mateuzim"},{name:"paganois",cep:"mateuzim"},{name:"pagaeuno",cep:"mateuzim"},{name:"taquasela",cep:"mateuzim"},{name:"opafalacomigmeu",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"}];
   useEffect(()=>{
     //Da um get  e pega o id de produtos e o joga pro reducer
-    fetch('/.netlify/functions/read-all-products')
-      .then((response) => {
-        console.log(response)
-        const pdds= response.json()
-        console.log("vv",pdds)
-    })
-      .catch((error) =>{
-        console.log(error.json())
-      })
+    console.log(reallAllProducts())
     
     dispatchProducts({type:'Clear'})
     array.forEach(element => {
