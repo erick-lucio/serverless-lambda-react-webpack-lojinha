@@ -19,15 +19,15 @@ function createFaunaDB(key) {
     secret: key
   })
 
-  /* Schemma */
-  return client.query(
+  /* Create Products collection */
+  const createProducts = client.query(
     q.Create(q.Ref('classes'), { 
       name: 'products' 
     }))
     .then(() => {
       return client.query(
         q.Create(q.Ref('indexes'), {
-          name: 'all_products',
+          name: 'products_index',
           source: q.Ref('classes/products')
         }))
     }).catch((e) => {
@@ -38,5 +38,25 @@ function createFaunaDB(key) {
         throw e
       }
     })
+    //Create Purchases collection
+    const createPurchases = client.query(
+      q.Create(q.Ref('classes'), { 
+        name: 'purchases' 
+      }))
+      .then(() => {
+        return client.query(
+          q.Create(q.Ref('indexes'), {
+            name: 'purchases_index',
+            source: q.Ref('classes/purchases')
+          }))
+      }).catch((e) => {
+        // Verifica se o banco ja existe
+        if (e.requestResult.statusCode === 400 && e.message === 'instance not unique') {
+          console.log('Banco ja existe')
+         
+          throw e
+        }
+      })
+      return createProducts,createPurchases
 }
 
