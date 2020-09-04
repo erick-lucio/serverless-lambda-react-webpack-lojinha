@@ -44,9 +44,9 @@ const batchDeleteTodo = (todoIds) => {
 }
 
 export default {
-  create: create,
-  readAll: readAll,
-  update: update,
-  delete: deleteTodo,
-  batchDelete: batchDeleteTodo
+   create,
+   readAllProducts,
+   update,
+   deleteTodo,
+   batchDeleteTodo
 }
