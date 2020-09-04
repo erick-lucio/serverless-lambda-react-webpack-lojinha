@@ -1,6 +1,6 @@
 
 
-const create = (data) => {
+function create(data) {
   return fetch('/.netlify/functions/todos-create', {
     body: JSON.stringify(data),
     method: 'POST'
@@ -9,13 +9,13 @@ const create = (data) => {
   })
 }
 
-const readAllProducts = () => {
+function readAllProducts(){
   return fetch('/.netlify/functions/todos-read-products').then((response) => {
     return response.json()
   })
 }
 
-const update = (todoId, data) => {
+function update(todoId, data){
   return fetch(`/.netlify/functions/todos-update/${todoId}`, {
     body: JSON.stringify(data),
     method: 'POST'
@@ -24,7 +24,7 @@ const update = (todoId, data) => {
   })
 }
 
-const deleteTodo = (todoId) => {
+function deleteTodo(todoId){
   return fetch(`/.netlify/functions/todos-delete/${todoId}`, {
     method: 'POST',
   }).then(response => {
@@ -32,7 +32,7 @@ const deleteTodo = (todoId) => {
   })
 }
 
-const batchDeleteTodo = (todoIds) => {
+function batchDeleteTodo(todoIds){
   return fetch(`/.netlify/functions/todos-delete-batch`, {
     body: JSON.stringify({
       ids: todoIds
