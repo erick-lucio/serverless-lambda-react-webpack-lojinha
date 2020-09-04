@@ -20,7 +20,7 @@ const Main = () => {
       .then((response) => {
         console.log(response)
         const pdds= response.json()
-        console.log("vv",pdds.value)
+        console.log("vv",pdds)
     })
       .catch((error) =>{
         console.log(error.json())
