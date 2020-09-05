@@ -10,10 +10,10 @@ exports.handler = async (event) => {
     secret: process.env.SECRET_KEY_FAUNA,
   });
   /* parse the string body into a useable JS object */
-  const dataReq = JSON.parse(event.body);
-  console.log("Function `todo-create` invoked", dataReq);
+  const data = JSON.parse(event.body);
+  console.log("Function `todo-create` invoked", data);
   const todoItem = {
-    data={dataReq}
+    data: data,
   };
   /* construct the fauna query */
   return client

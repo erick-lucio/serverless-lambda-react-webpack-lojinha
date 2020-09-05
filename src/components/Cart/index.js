@@ -18,16 +18,20 @@ const Cart = () => {
     // console.log(productName+" Removido do carrinho")
   };
   const completePurchase = (cartArray) => {
-    console.log(cartArray);
-    dispatchCounter({ type: "set",count:0 });
-    fetch("/.netlify/functions/insert-new-purchase", {
-      body: JSON.stringify(cartArray),
-      method: "POST",
-    }).then((response) => {
-      return response.json().then((json) => {
-        return json;
+    cartArray.forEach(element => {
+      fetch("/.netlify/functions/insert-new-purchase", {
+        body: JSON.stringify(element),
+        method: "POST",
+      }).then((response) => {
+        return response.json().then((json) => {
+          return json;
+        });
       });
     });
+    
+
+    
+    dispatchCounter({ type: "set",count:0 });
     dispatchCart({ type: "Clear" });
   };
   return (
