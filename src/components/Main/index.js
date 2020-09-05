@@ -33,17 +33,17 @@ const Main = () => {
   {name:"elsnru",cep:"mateuzim"},{name:"oipaeu",cep:"mateuzim"},{name:"paganois",cep:"mateuzim"},{name:"pagaeuno",cep:"mateuzim"},{name:"taquasela",cep:"mateuzim"},{name:"opafalacomigmeu",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"}];
   useEffect(()=>{
     //Da um get  e pega o id de produtos e o joga pro reducer
- 
+    dispatchProducts({type:'Clear'})
     getAllProducts()
       .then((response)=>{
         console.log(response[0].data.img_name)
         console.log(response[0].data.price)
-        console.log(response[0].ref)
-        console.log(response[0])
         console.log(response[0].ref["@ref"].id)
-        //
-        
-        console.log(response[0].ref.hasOwnProperty("@ref"))
+
+        response.forEach(element => {
+      
+          dispatchProducts({type: 'ProductSet',product_name:"Produto",product_price:element.data.price,img_path:"/.netlify/src/assets/imgs/"+element.data.img_name})  
+        });
 
       })
        
@@ -51,11 +51,8 @@ const Main = () => {
     .then((response)=>{
       //console.log(response)
     })
-    dispatchProducts({type:'Clear'})
-    array.forEach(element => {
-      
-      dispatchProducts({type: 'ProductSet',product_name:element.name,product_price:34545,img_path:"dfdf"})  
-    });
+    
+
     },[])
 
   const addToCart = (name,imgPath,price) =>{
