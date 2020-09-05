@@ -42,7 +42,7 @@ const Main = () => {
 
         response.forEach(element => {
       
-          dispatchProducts({type: 'ProductSet',product_name:element.product_name,product_price:element.data.price,img_path:"/.netlify/src/assets/imgs/"+element.data.img_name})  
+          dispatchProducts({type: 'ProductSet',product_name:element.data.product_name,product_price:element.data.price,img_path:"/.netlify/src/assets/imgs/"+element.data.img_name})  
         });
 
       })
