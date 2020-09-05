@@ -35,8 +35,7 @@ export default function Routes() {
 
   const history = createBrowserHistory();
   //custom hook
-  const favicon = document.getElementById(favicon)
-  favicon.href=ShopIcon.default
+  document.getElementById('favicon').setAttribute('href',ShopIcon)
 
   return (
     <HashRouter history={history}>
