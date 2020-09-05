@@ -42,7 +42,7 @@ const Main = () => {
 
         response.forEach(element => {
       
-          dispatchProducts({type: 'ProductSet',product_name:element.data.product_name,product_price:element.data.price,img_path:element.data.img_name,id:element.ref["@ref"].id})  
+          dispatchProducts({type: 'ProductSet',product_name:element.data.product_name,product_price:element.data.price,img_path:"../../assets/imgs/"+element.data.img_name,id:element.ref["@ref"].id})  
         });
 
       })
@@ -59,28 +59,21 @@ const Main = () => {
     dispatchCounter({type: 'increment'})
     dispatchCart({type: 'CartAdd',product_name:name,product_price:price,img_path:imgPath,id:refId})
   }
-  function importAll(r) {
-    let images = {};
-    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-    return images;
-  }
   
-  const images = importAll(require.context('../../assets/imgs', false, /\.(png|jpe?g|svg)$/));
-  console.log(images)
   return (
     <Container>      
       {stateProducts.objects_products.map((obj,key)=>{
-        
+        {console.log(obj.img_path)}
         return (            
           <ProductDiv key={key}>
-            <img url={require('../../assets/imgs/'+images[obj.img_path].default)} style={{height: "40%",width: 120}}></img>
+            <img url={require(obj.img_path)} style={{height: "40%",width: 120}}></img>
             <Text fontsize={2} style={{marginTop:10,overflowWrap:"anywhere",textAlign:"center",height:"40%"}}>
                {obj.name}
             </Text>
             <Text fontsize={1.5} style={{marginTop:10,alignSelf:"flex-start",paddingLeft:"20px",color:"#373040",height:"10%"}}>
               R$:{obj.price}
             </Text>
-            <Button onClick={()=>addToCart(obj.name,images[obj.img_path].default,obj.price,obj.ref_id) } style={{marginButtom:"0",height:"auto"}}>
+            <Button onClick={()=>addToCart(obj.name,obj.img_path,obj.price,obj.ref_id) } style={{marginButtom:"0",height:"auto"}}>
               <Text fontsize={1.5}>
                 <img src={shopCart} style={{height: 60,width: "auto",cursor:"pointer"}}></img>
               </Text>
