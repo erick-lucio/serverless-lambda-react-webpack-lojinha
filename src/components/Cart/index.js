@@ -19,6 +19,7 @@ const Cart = () => {
   };
   const completePurchase = (cartArray) => {
     cartArray.forEach(element => {
+      element.date = Date.now()
       fetch("/.netlify/functions/insert-new-purchase", {
         body: JSON.stringify(element),
         method: "POST",
