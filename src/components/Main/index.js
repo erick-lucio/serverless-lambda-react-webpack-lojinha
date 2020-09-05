@@ -68,12 +68,12 @@ const Main = () => {
           <ProductDiv key={key}>
             <img src={dressImg} style={{height: "40%",width: 120}}></img>
             <Text fontsize={2} style={{marginTop:10,overflowWrap:"anywhere",textAlign:"center",height:"40%"}}>
-               Vestido {obj.name}
+               {obj.name}
             </Text>
             <Text fontsize={1.5} style={{marginTop:10,alignSelf:"flex-start",paddingLeft:"20px",color:"#373040",height:"10%"}}>
-              R$:63,69
+              R$:{obj.price}
             </Text>
-            <Button onClick={()=>addToCart(obj.name,"imgPath",53) } style={{marginButtom:"0",height:"auto"}}>
+            <Button onClick={()=>addToCart(obj.name,obj.img_path,obj.price) } style={{marginButtom:"0",height:"auto"}}>
               <Text fontsize={1.5}>
                 <img src={shopCart} style={{height: 60,width: "auto",cursor:"pointer"}}></img>
               </Text>
