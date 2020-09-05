@@ -11,7 +11,7 @@ export const Container = styled.div`
     padding-bottom:100px;
 `;
 export const ProductDiv = styled.div`
-    max-width: 20%;
+    max-width: 23%;
     margin-top:50px;   
     flex:1 1 250px;
     display:flex;
