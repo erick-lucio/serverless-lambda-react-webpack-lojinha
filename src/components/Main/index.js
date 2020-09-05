@@ -6,7 +6,7 @@ import { context1 } from "../../Context";
 import fetchFunctions from "../../utils/api";
 import path from "path";
 import { getImagesNames } from "../../../scripts/insertDBImageNames";
-
+import crypto from "crypto-js"
 const Main = () => {
   const { productImg, setProductImg } = useState([]);
   const { stateCounter, dispatchCounter } = useContext(context1);
