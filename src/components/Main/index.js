@@ -36,7 +36,7 @@ const Main = () => {
     dispatchProducts({type:'Clear'})
     getAllProducts()
       .then((response)=>{
-      //  console.log(response[0].data.img_name)
+        console.log(response[0])
         //console.log(response[0].data.price)
         //console.log(response[0].ref["@ref"].id)
 
