@@ -4,6 +4,7 @@ import dressImg from '../../assets/imgs/img_dress.jpeg'
 import shopCart from '../../assets/icons/icons8-add-shopping-cart-64.png'
 import {context1} from '../../Context'
 import fetchFunctions from '../../utils/api'
+import path from 'path'
 
 const Main = () => {
   const {stateCounter,dispatchCounter}=useContext(context1)
@@ -28,7 +29,10 @@ const Main = () => {
         })
     })
   }
-  
+ 
+  console.log(path.resolve(__dirname,"src","assets","imgs"))
+
+
   const array = [{name:"erick",cep:"mateuzim"},{name:"marcao",cep:"mateuzim"},{name:"lucqaas",cep:"mateuzim"},{name:"cavalo",cep:"mateuzim"},{name:"alan",cep:"mateuzim"},{name:"adam",cep:"mateuzim"},{name:"camaluto",cep:"mateuzim"},
   {name:"elsnru",cep:"mateuzim"},{name:"oipaeu",cep:"mateuzim"},{name:"paganois",cep:"mateuzim"},{name:"pagaeuno",cep:"mateuzim"},{name:"taquasela",cep:"mateuzim"},{name:"opafalacomigmeu",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"}];
   useEffect(()=>{
@@ -66,7 +70,7 @@ const Main = () => {
         {console.log(obj.img_path)}
         return (            
           <ProductDiv key={key}>
-            <img url={require.context(obj.img_path ,false, /\.(gif|jpe?g|svg)$/)} style={{height: "40%",width: 120}}></img>
+            <img url={require(obj.img_path)} style={{height: "40%",width: 120}}></img>
             <Text fontsize={2} style={{marginTop:10,overflowWrap:"anywhere",textAlign:"center",height:"40%"}}>
                {obj.name}
             </Text>
