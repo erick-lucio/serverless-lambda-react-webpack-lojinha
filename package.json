@@ -17,7 +17,8 @@
     "docs": "md-magic --path '**/*.md' --ignore 'node_modules'",
     "start": "webpack-dev-server --open --mode development",
     "prebuild": "echo 'setup faunaDB' && npm run bootstrap",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "pretier": "npx prettier --write ."
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
