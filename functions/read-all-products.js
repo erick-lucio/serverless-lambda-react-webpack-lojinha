@@ -3,8 +3,7 @@ const faunadb = require("faunadb");
 const q = faunadb.query;
 
 exports.handler = async (event) => {
-  const subject = event.queryStringParameters.name || "world";
-  console.log("subject - : " + subject);
+
   console.log("Function `todo-read-all` invoked");
   /* configure faunaDB Client with our secret */
   const client = new faunadb.Client({

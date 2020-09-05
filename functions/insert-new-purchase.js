@@ -4,17 +4,16 @@ const q = faunadb.query;
 //SECRET_KEY_FAUNA
 /* export our lambda function as named "handler" export */
 exports.handler = async (event) => {
-  const subject = event.queryStringParameters.name || "world";
-  console.log("subject - : " + subject);
+
   /* configure faunaDB Client with our secret */
   const client = new faunadb.Client({
     secret: process.env.SECRET_KEY_FAUNA,
   });
   /* parse the string body into a useable JS object */
-  const data = JSON.parse(event.body);
-  console.log("Function `todo-create` invoked", data);
+  const dataReq = JSON.parse(event.body);
+  console.log("Function `todo-create` invoked", dataReq);
   const todoItem = {
-    data: data,
+    data={dataReq}
   };
   /* construct the fauna query */
   return client

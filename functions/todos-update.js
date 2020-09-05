@@ -4,8 +4,7 @@ const q = faunadb.query;
 
 exports.handler = async (event) => {
   /* configure faunaDB Client with our secret */
-  const subject = event.queryStringParameters.name || "world";
-  console.log("subject - : " + subject);
+
   const client = new faunadb.Client({
     secret: process.env.SECRET_KEY_FAUNA,
   });

@@ -81,7 +81,7 @@ const Main = () => {
 
   return (
     <Container>
-      <button onClick={() => getImagesNames()}>fd</button>
+     
       {stateProducts.objects_products.map((obj, key) => {
         return (
           <ProductDiv key={key}>

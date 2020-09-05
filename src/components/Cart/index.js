@@ -19,6 +19,7 @@ const Cart = () => {
   };
   const completePurchase = (cartArray) => {
     console.log(cartArray);
+    dispatchCounter({ type: "set",count:0 });
     fetch("/.netlify/functions/insert-new-purchase", {
       body: JSON.stringify(cartArray),
       method: "POST",
@@ -45,7 +46,7 @@ const Cart = () => {
                 ></img>
                 <Text fontsize={2}>
                   {cart_obj.name}
-                  {cart_obj.ref_id}
+                 
                 </Text>
                 <img
                   src={removeIcon}
