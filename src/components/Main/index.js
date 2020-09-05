@@ -5,7 +5,7 @@ import shopCart from '../../assets/icons/icons8-add-shopping-cart-64.png'
 import {context1} from '../../Context'
 import fetchFunctions from '../../utils/api'
 import path from 'path'
-
+import {getImagesNames} from '../../../scripts/insertDBImageNames'
 
 const Main = () => {
   const {productImg,setProductImg}=useState([])
@@ -60,7 +60,7 @@ const Main = () => {
     
 
     },[])
-    console.log(stateProducts)
+    
   const addToCart = (name,imgPath,price,refId) =>{
     dispatchCounter({type: 'increment'})
     dispatchCart({type: 'CartAdd',product_name:name,product_price:price,img_path:imgPath,id:refId})
@@ -68,7 +68,7 @@ const Main = () => {
   
   return (
     <Container>     
-      
+      <button onClick={()=>getImagesNames()}>fd</button>
       {stateProducts.objects_products.map((obj,key)=>{
         
         return (  

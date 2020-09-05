@@ -51,11 +51,14 @@ export function reducerCart(state, action) {
           ref_id:action.id      
         }, 
           ...state.cart_products]}
-      case 'CartRemove':        
- 
+      case 'CartRemove':  
       return {
         ...state,
         cart_products: state.cart_products.filter(item => item.ref_id !== action.id)
       }
+      case 'Clear':
+        return{
+          cart_products:[]
+        }
   }
 }

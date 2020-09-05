@@ -23,6 +23,20 @@ const Cart = () => {
     dispatchCart({type: 'CartRemove',id:ref_id})
    // console.log(productName+" Removido do carrinho")
   }
+  const completePurchase = (cartArray) =>{
+    console.log(cartArray)
+    fetch('/.netlify/functions/insert-new-purchase', {
+      body: JSON.stringify(cartArray),
+      method: 'POST'
+    })
+    .then((response)=>{
+      return response.json()
+        .then((json)=>{         
+          return json
+        })
+    })
+    dispatchCart({type:"Clear"})
+  }
   return (
     <Container>
       {stateCart.cart_products.length == 0?
@@ -33,13 +47,13 @@ const Cart = () => {
         return(
           <ItensDiv key={key}>
             <img src={cart_obj.img_path} style={{height: 120,width: "auto"}}></img>
-            <Text fontsize={2}>{cart_obj.name}</Text>
+            <Text fontsize={2}>{cart_obj.name}{cart_obj.ref_id}</Text>
             <img src={removeIcon} style={{height: 50,width: "auto",cursor:"pointer"}} onClick={()=>removeProduct(cart_obj.ref_id)}></img>
 
           </ItensDiv>
         )
         })}
-        <Button onClick={()=>alert("Compra Finalizada")}>
+        <Button onClick={()=>completePurchase(stateCart.cart_products)}>
           <Text fontsize={2}>Finalizar Compra</Text>
         </Button>
        </>
