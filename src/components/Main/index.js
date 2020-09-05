@@ -70,7 +70,7 @@ const Main = () => {
         
         return (            
           <ProductDiv key={key}>
-            <img src={require("./src/assets/imgs/img_dress.jpeg")} style={{height: "40%",width: 120}}></img>
+            
             <img src={require(path.resolve(".netlify",img_path,))} style={{height: "40%",width: 120}}></img>
             <img src={require(path.resolve(__dirname,"src","assets","imgs","img_dress.jpeg"))} style={{height: "40%",width: 120}}></img>
             <Text fontsize={2} style={{marginTop:10,overflowWrap:"anywhere",textAlign:"center",height:"40%"}}>
