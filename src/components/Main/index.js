@@ -61,8 +61,7 @@ const Main = () => {
   }
   
   return (
-    <Container>
-      
+    <Container>      
       {stateProducts.objects_products.map((obj,key)=>{
         {console.log(obj.img_path)}
         return (            
@@ -81,7 +80,6 @@ const Main = () => {
             </Button>
         </ProductDiv>)
       })}
-
     </Container>
   );
 };
