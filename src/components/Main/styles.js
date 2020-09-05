@@ -50,6 +50,6 @@ export const Image = styled.img`
     height: 50%; 
     width: 50%;
     src:${(props)=>props.src};
-    border:1px double rgb(0,0,0);
+    border:3px double rgb(0,0,0);
 `;
 
