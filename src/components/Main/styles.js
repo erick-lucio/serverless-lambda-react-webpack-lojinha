@@ -48,7 +48,7 @@ export const Button = styled.button`
 `;
 export const Image = styled.img`
     height: 50%; 
-    width: 50%;
+    width: 65%;
     src:${(props)=>props.src};
     border:3px double rgb(0,0,0);
 `;
