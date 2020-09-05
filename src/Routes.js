@@ -7,7 +7,7 @@ import {
   Router,
   HashRouter,
 } from "react-router-dom";
-import ShopIcon from './assets/icons/icons8-shop-96'
+import ShopIcon from './assets/icons/icons8-shop-96.png'
 import { createBrowserHistory } from "history";
 import Main from "./components/Main/index";
 import Cart from "./components/Cart/index.js";
