@@ -10,7 +10,7 @@ exports.handler = async (event) => {
   const id = event.queryStringParameters.id;
   console.log(`Function 'todo-delete' invoked. delete id: ${id}`);
   return client
-    .query(q.Delete(q.Ref(`classes/todos/${id}`)))
+    .query(q.Delete(q.Ref(`classes/products/${id}`)))
     .then((response) => {
       console.log("success", response);
       return {

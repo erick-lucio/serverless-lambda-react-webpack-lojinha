@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "crypto-js": "^4.0.0",
     "css-loader": "^4.2.2",
     "faunadb": "^2.13.1",
     "history": "^5.0.0",

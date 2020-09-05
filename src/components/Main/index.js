@@ -78,10 +78,9 @@ const Main = () => {
       id: refId,
     });
   };
-
+  console.log(crypto.randomBytes(64).toString('hex'))
   return (
-    <Container>
-     
+    <Container>     
       {stateProducts.objects_products.map((obj, key) => {
         return (
           <ProductDiv key={key}>
