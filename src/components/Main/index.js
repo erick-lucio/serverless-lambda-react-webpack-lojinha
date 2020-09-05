@@ -40,7 +40,7 @@ const Main = () => {
         console.log(response[0].data.price)
         console.log(response[0].ref)
         console.log(response[0])
-        console.log(response[0].ref["@ref"]
+        console.log(response[0].ref["@ref"])
         //
         
         console.log(response[0].ref.hasOwnProperty("@ref"))
