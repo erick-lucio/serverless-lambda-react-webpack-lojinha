@@ -38,7 +38,7 @@ const Main = () => {
       .then((response)=>{
         console.log(response[0].data.img_name)
         console.log(response[0].data.price)
-        console.log(response[0].data.ref.id)
+        console.log(response[0].ref.id)
         console.log(response[0].data)
       })
        
