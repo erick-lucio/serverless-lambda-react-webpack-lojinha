@@ -60,7 +60,10 @@ const Main = () => {
       id: refId,
     });
   };
-  console.log(Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5))
+  function genId(){
+    return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 35)
+  }
+
   return (
     <Container>     
       {stateProducts.objects_products.map((obj, key) => {
@@ -92,7 +95,7 @@ const Main = () => {
             </Text>
             <Button
               onClick={() =>
-                addToCart(obj.name, obj.img_path, obj.price, obj.ref_id)
+                addToCart(obj.name, obj.img_path, obj.price,genId())
               }
               style={{ marginButtom: "0", height: "auto" }}
             >
