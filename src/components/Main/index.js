@@ -67,7 +67,7 @@ const Main = () => {
         {console.log(obj.img_path)}
         return (            
           <ProductDiv key={key}>
-            <img src={obj.img_path} style={{height: "40%",width: 120}}></img>
+            <img url={import(obj.img_path)} style={{height: "40%",width: 120}}></img>
             <Text fontsize={2} style={{marginTop:10,overflowWrap:"anywhere",textAlign:"center",height:"40%"}}>
                {obj.name}
             </Text>
