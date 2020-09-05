@@ -38,13 +38,13 @@ const Main = () => {
       .then((response)=>{
         console.log(response[0].data.img_name)
         console.log(response[0].data.price)
-        console.log(response[0].ref.id)
+        console.log(response[0].ref)
         console.log(response[0].data)
       })
        
     getAllPurchases()
     .then((response)=>{
-      console.log(response)
+      //console.log(response)
     })
     dispatchProducts({type:'Clear'})
     array.forEach(element => {
