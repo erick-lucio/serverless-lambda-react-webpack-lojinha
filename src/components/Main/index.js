@@ -70,7 +70,7 @@ const Main = () => {
         
         return (            
           <ProductDiv key={key}>
-            <img url={path.resolve(img_path,obj.img_path)} style={{height: "40%",width: 120}}></img>
+            <img url={path.resolve(".netlify",img_path,obj.img_path)} style={{height: "40%",width: 120}}></img>
             <Text fontsize={2} style={{marginTop:10,overflowWrap:"anywhere",textAlign:"center",height:"40%"}}>
                {obj.name}
             </Text>
