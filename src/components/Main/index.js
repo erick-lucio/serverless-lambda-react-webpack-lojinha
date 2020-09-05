@@ -73,7 +73,7 @@ const Main = () => {
             <Text fontsize={1.5} style={{marginTop:10,alignSelf:"flex-start",paddingLeft:"20px",color:"#373040",height:"10%"}}>
               R$:{obj.price}
             </Text>
-            <Button onClick={()=>addToCart(obj.name,obj.img_path,obj.price,obj.ref["@ref"].id) } style={{marginButtom:"0",height:"auto"}}>
+            <Button onClick={()=>addToCart(obj.name,obj.img_path,obj.price,obj.ref.ref["@ref"].id) } style={{marginButtom:"0",height:"auto"}}>
               <Text fontsize={1.5}>
                 <img src={shopCart} style={{height: 60,width: "auto",cursor:"pointer"}}></img>
               </Text>
