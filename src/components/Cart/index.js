@@ -1,7 +1,7 @@
 import React,{useEffect,useState,useReducer,useContext} from 'react';
 
 import { Container ,Text,ItensDiv,Button} from './styles';
-import dressImg from '../../assets/imgs/img_dress.jpeg'
+import dressImg from '../../assets/imgs/pink-dress.jpg'
 import removeIcon from '../../assets/icons/icons8-remove-64.png'
 import {context1} from '../../Context'
 
@@ -17,10 +17,10 @@ const Cart = () => {
 
 
   },[stateCart])
-  const removeProduct = (ref_id) =>{
+  const removeProduct = (productName) =>{
     //P evitar bug no filter usar um id q n se repete
     dispatchCounter({type: 'decrement'})
-    dispatchCart({type: 'CartRemove',id:ref_id})
+    dispatchCart({type: 'CartRemove',product_name:productName})
    // console.log(productName+" Removido do carrinho")
   }
   return (
@@ -34,7 +34,7 @@ const Cart = () => {
           <ItensDiv key={key}>
             <img src={dressImg} style={{height: 120,width: "auto"}}></img>
             <Text fontsize={2}>{cart_obj.name}</Text>
-            <img src={removeIcon} style={{height: 50,width: "auto",cursor:"pointer"}} onClick={()=>removeProduct(cart_obj.ref_id)}></img>
+            <img src={removeIcon} style={{height: 50,width: "auto",cursor:"pointer"}} onClick={()=>removeProduct(cart_obj.name)}></img>
 
           </ItensDiv>
         )

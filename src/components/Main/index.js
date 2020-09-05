@@ -9,7 +9,7 @@ const Main = () => {
   const {stateCounter,dispatchCounter}=useContext(context1)
   const {stateProducts, dispatchProducts}=useContext(context1)
   const {stateCart, dispatchCart}=useContext(context1)
-  console.log(stateProducts)
+
   function getAllProducts(){
     return fetch('/.netlify/functions/read-all-products')
     .then((response)=>{
@@ -36,9 +36,9 @@ const Main = () => {
     dispatchProducts({type:'Clear'})
     getAllProducts()
       .then((response)=>{
-        console.log(response[0])
-        //console.log(response[0].data.price)
-        //console.log(response[0].ref["@ref"].id)
+        console.log(response[0].data.img_name)
+        console.log(response[0].data.price)
+        console.log(response[0].ref["@ref"].id)
 
         response.forEach(element => {
       
@@ -55,9 +55,9 @@ const Main = () => {
 
     },[])
 
-  const addToCart = (name,imgPath,price,ref_id) =>{
+  const addToCart = (name,imgPath,price) =>{
     dispatchCounter({type: 'increment'})
-    dispatchCart({type: 'CartAdd',product_name:name,product_price:price,img_path:imgPath,id:ref_id})
+    dispatchCart({type: 'CartAdd',product_name:name,product_price:price,img_path:imgPath})
   }
   
   return (
@@ -73,7 +73,7 @@ const Main = () => {
             <Text fontsize={1.5} style={{marginTop:10,alignSelf:"flex-start",paddingLeft:"20px",color:"#373040",height:"10%"}}>
               R$:{obj.price}
             </Text>
-            <Button onClick={()=>addToCart(obj.name,obj.img_path,obj.price,obj.ref["@ref"].id) } style={{marginButtom:"0",height:"auto"}}>
+            <Button onClick={()=>addToCart(obj.name,obj.img_path,obj.price) } style={{marginButtom:"0",height:"auto"}}>
               <Text fontsize={1.5}>
                 <img src={shopCart} style={{height: 60,width: "auto",cursor:"pointer"}}></img>
               </Text>
