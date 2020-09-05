@@ -29,7 +29,8 @@ export function reducerProducts(state, action) {
         [{          
           name: action.product_name,          
           price: action.product_price,          
-          img_path: action.img_path       
+          img_path: action.img_path,
+          ref_id:action.id       
         }, 
           ...state.objects_products]}
     case 'Clear':
@@ -54,7 +55,7 @@ export function reducerCart(state, action) {
  
       return {
         ...state,
-        cart_products: state.cart_products.filter(item => item.name !== action.product_name)
+        cart_products: state.cart_products.filter(item => item.ref_id !== action.id)
       }
   }
 }

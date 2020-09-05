@@ -32,7 +32,7 @@ const Cart = () => {
         {stateCart.cart_products.map((cart_obj,key)=>{
         return(
           <ItensDiv key={key}>
-            <img src={dressImg} style={{height: 120,width: "auto"}}></img>
+            <img src={cart_obj.img_path} style={{height: 120,width: "auto"}}></img>
             <Text fontsize={2}>{cart_obj.name}</Text>
             <img src={removeIcon} style={{height: 50,width: "auto",cursor:"pointer"}} onClick={()=>removeProduct(cart_obj.ref_id)}></img>
 

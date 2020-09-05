@@ -42,7 +42,7 @@ const Main = () => {
 
         response.forEach(element => {
       
-          dispatchProducts({type: 'ProductSet',product_name:element.data.product_name,product_price:element.data.price,img_path:"/.netlify/src/assets/imgs/"+element.data.img_name})  
+          dispatchProducts({type: 'ProductSet',product_name:element.data.product_name,product_price:element.data.price,img_path:"/.netlify/src/assets/imgs/"+element.data.img_name,id:element.ref["@ref"].id})  
         });
 
       })
@@ -55,9 +55,9 @@ const Main = () => {
 
     },[])
 
-  const addToCart = (name,imgPath,price) =>{
+  const addToCart = (name,imgPath,price,refId) =>{
     dispatchCounter({type: 'increment'})
-    dispatchCart({type: 'CartAdd',product_name:name,product_price:price,img_path:imgPath})
+    dispatchCart({type: 'CartAdd',product_name:name,product_price:price,img_path:imgPath,id:refId})
   }
   
   return (
@@ -66,14 +66,14 @@ const Main = () => {
       {stateProducts.objects_products.map((obj,key)=>{
         return (  
           <ProductDiv key={key}>
-            <img src={dressImg} style={{height: "40%",width: 120}}></img>
+            <img src={obj.img_path} style={{height: "40%",width: 120}}></img>
             <Text fontsize={2} style={{marginTop:10,overflowWrap:"anywhere",textAlign:"center",height:"40%"}}>
                {obj.name}
             </Text>
             <Text fontsize={1.5} style={{marginTop:10,alignSelf:"flex-start",paddingLeft:"20px",color:"#373040",height:"10%"}}>
               R$:{obj.price}
             </Text>
-            <Button onClick={()=>addToCart(obj.name,obj.img_path,obj.price) } style={{marginButtom:"0",height:"auto"}}>
+            <Button onClick={()=>addToCart(obj.name,obj.img_path,obj.price,obj.ref_id) } style={{marginButtom:"0",height:"auto"}}>
               <Text fontsize={1.5}>
                 <img src={shopCart} style={{height: 60,width: "auto",cursor:"pointer"}}></img>
               </Text>
