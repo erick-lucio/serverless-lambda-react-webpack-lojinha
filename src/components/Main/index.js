@@ -38,8 +38,8 @@ const Main = () => {
       .then((response)=>{
         console.log(response[0].data.img_name)
         console.log(response[0].data.price)
-        console.log(response[0].ref)
-        console.log(response[0].data)
+        console.log(response[0].ref.ref)
+        console.log(response[0])
       })
        
     getAllPurchases()
