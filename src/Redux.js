@@ -54,7 +54,7 @@ export function reducerCart(state, action) {
  
       return {
         ...state,
-        cart_products: state.cart_products.filter(item => item.ref_id !== action.id    )
+        cart_products: state.cart_products.filter(item => item.name !== action.product_name)
       }
   }
 }
