@@ -37,7 +37,7 @@ const Main = () => {
   console.log(path.join(__dirname,"..","..","assets","imgs"))
   console.log(path.resolve("./../../assets/imgs/img_dress.jpeg"))
   console.log(path.join("./../../assets/imgs/img_dress.jpeg"))
-  console.log(path.parse("./../../assets/imgs/img_dress.jpeg"))
+ 
   console.log(path.basename("./../../assets/imgs/img_dress.jpeg"))
   console.log("ALALAOAO")
 
