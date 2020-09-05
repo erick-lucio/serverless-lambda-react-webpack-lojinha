@@ -73,14 +73,14 @@ const Main = () => {
         
         return (            
           <ProductDiv key={key}>
-            <img url={images[obj.img_path]} style={{height: "40%",width: 120}}></img>
+            <img url={images[obj.img_path].default} style={{height: "40%",width: 120}}></img>
             <Text fontsize={2} style={{marginTop:10,overflowWrap:"anywhere",textAlign:"center",height:"40%"}}>
                {obj.name}
             </Text>
             <Text fontsize={1.5} style={{marginTop:10,alignSelf:"flex-start",paddingLeft:"20px",color:"#373040",height:"10%"}}>
               R$:{obj.price}
             </Text>
-            <Button onClick={()=>addToCart(obj.name,obj.img_path,obj.price,obj.ref_id) } style={{marginButtom:"0",height:"auto"}}>
+            <Button onClick={()=>addToCart(obj.name,images[obj.img_path].default,obj.price,obj.ref_id) } style={{marginButtom:"0",height:"auto"}}>
               <Text fontsize={1.5}>
                 <img src={shopCart} style={{height: 60,width: "auto",cursor:"pointer"}}></img>
               </Text>
