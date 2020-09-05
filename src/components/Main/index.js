@@ -34,6 +34,8 @@ const Main = () => {
   console.log(__dirname)
   console.log(path.resolve(__dirname,"..","..","assets","imgs"))
   console.log(path.resolve(__dirname,"assets","imgs","img_dress.jpeg"))
+  console.log(path.join(__dirname,"..","..","assets","imgs"))
+  console.log(path.join(__dirname,"assets","imgs","img_dress.jpeg"))
 
 
   const array = [{name:"erick",cep:"mateuzim"},{name:"marcao",cep:"mateuzim"},{name:"lucqaas",cep:"mateuzim"},{name:"cavalo",cep:"mateuzim"},{name:"alan",cep:"mateuzim"},{name:"adam",cep:"mateuzim"},{name:"camaluto",cep:"mateuzim"},
