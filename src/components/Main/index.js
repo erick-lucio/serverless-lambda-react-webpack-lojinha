@@ -59,7 +59,14 @@ const Main = () => {
     dispatchCounter({type: 'increment'})
     dispatchCart({type: 'CartAdd',product_name:name,product_price:price,img_path:imgPath,id:refId})
   }
+  function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return images;
+  }
   
+  const images = importAll(require.context('../../assets/imgs', false, /\.(png|jpe?g|svg)$/));
+  console.log(images)
   return (
     <Container>      
       {stateProducts.objects_products.map((obj,key)=>{
