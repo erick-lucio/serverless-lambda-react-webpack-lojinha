@@ -47,8 +47,9 @@ export const Button = styled.button`
   justify-content: flex-end;
 `;
 export const Image = styled.img`
-    height: 40%; 
-    width: 120px;
-    src:${(props)=>props.src}
+    height: 50%; 
+    width: 50%;
+    src:${(props)=>props.src};
+    border:1px double rgb(0,0,0);
 `;
 

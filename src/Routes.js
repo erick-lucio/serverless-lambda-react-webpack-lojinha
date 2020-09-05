@@ -22,7 +22,9 @@ import {
   estadoInicialProducts,
 } from "./Redux";
 import { useCounter } from "./useCounter";
+
 export default function Routes() {
+  document.getElementById('favicon').setAttribute('href',ShopIcon)
   const [stateCounter, dispatchCounter] = useReducer(
     reducerCounter,
     estadoInicialCounter
@@ -35,7 +37,7 @@ export default function Routes() {
 
   const history = createBrowserHistory();
   //custom hook
-  document.getElementById('favicon').setAttribute('href',ShopIcon)
+ 
 
   return (
     <HashRouter history={history}>
