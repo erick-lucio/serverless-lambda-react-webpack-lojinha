@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useReducer, useContext } from "react";
-import { Container, ProductDiv, Text, Button } from "./styles";
+import { Container, ProductDiv, Text, Button ,Image} from "./styles";
 
 import shopCart from "../../assets/icons/icons8-add-shopping-cart-64.png";
 import { context1 } from "../../Context";
@@ -69,7 +69,7 @@ const Main = () => {
       {stateProducts.objects_products.map((obj, key) => {
         return (
           <ProductDiv key={key}>
-            <img src={obj.img_path} style={{ height: "40%", width: 120 }}></img>
+            <Image src={obj.img_path} ></Image>
             <Text
               fontsize={2}
               style={{

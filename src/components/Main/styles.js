@@ -46,3 +46,9 @@ export const Button = styled.button`
   background-color: inherit;
   justify-content: flex-end;
 `;
+export const Image = styled.image`
+    height: "40%"; 
+    width: 120;
+    src:${(props)=>props.src}
+`;
+
