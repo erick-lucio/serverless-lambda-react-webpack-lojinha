@@ -29,8 +29,8 @@ const Main = () => {
         })
     })
   }
- 
-  console.log(path.resolve(__dirname,"src","assets","imgs"))
+  var asas = path.resolve(__dirname,"src","assets","imgs")
+  console.log(asas)
 
 
   const array = [{name:"erick",cep:"mateuzim"},{name:"marcao",cep:"mateuzim"},{name:"lucqaas",cep:"mateuzim"},{name:"cavalo",cep:"mateuzim"},{name:"alan",cep:"mateuzim"},{name:"adam",cep:"mateuzim"},{name:"camaluto",cep:"mateuzim"},
@@ -46,7 +46,7 @@ const Main = () => {
 
         response.forEach(element => {
       
-          dispatchProducts({type: 'ProductSet',product_name:element.data.product_name,product_price:element.data.price,img_path:"../../assets/imgs/"+element.data.img_name,id:element.ref["@ref"].id})  
+          dispatchProducts({type: 'ProductSet',product_name:element.data.product_name,product_price:element.data.price,img_path:element.data.img_name,id:element.ref["@ref"].id})  
         });
 
       })
@@ -67,7 +67,7 @@ const Main = () => {
   return (
     <Container>      
       {stateProducts.objects_products.map((obj,key)=>{
-        {console.log(obj.img_path)}
+        {console.log(asas+obj.img_path)}
         return (            
           <ProductDiv key={key}>
             <img url={require(obj.img_path)} style={{height: "40%",width: 120}}></img>
