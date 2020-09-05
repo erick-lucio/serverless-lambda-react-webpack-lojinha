@@ -1,6 +1,6 @@
 import React,{useEffect,useState,useReducer,useContext} from 'react';
 import { Container,ProductDiv,Text,Button } from './styles';
-import dressImg from '../../assets/imgs/pink-dress.jpg'
+import dressImg from '../../assets/imgs/img_dress.jpeg'
 import shopCart from '../../assets/icons/icons8-add-shopping-cart-64.png'
 import {context1} from '../../Context'
 import fetchFunctions from '../../utils/api'
