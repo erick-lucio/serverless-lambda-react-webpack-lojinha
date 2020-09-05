@@ -21,7 +21,22 @@ export default function Routes() {
  
   const history = createBrowserHistory();
   //custom hook
- 
+  function change_favicon(img) {
+    var favicon = document.querySelector('link[rel="shortcut icon"]');
+    
+    if (!favicon) {
+        favicon = document.createElement('link');
+        favicon.setAttribute('rel', 'shortcut icon');
+        var head = document.querySelector('head');
+        head.appendChild(favicon);
+    }
+    
+    
+    favicon.setAttribute('type', 'image/png');
+    favicon.setAttribute('href', img);
+  }
+
+change_favicon('../src/assets/icons/icons8-shop-96.png');
    
   return (
     <HashRouter history={history}>
