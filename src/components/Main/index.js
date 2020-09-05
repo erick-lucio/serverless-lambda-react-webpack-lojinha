@@ -6,7 +6,9 @@ import {context1} from '../../Context'
 import fetchFunctions from '../../utils/api'
 import path from 'path'
 
+
 const Main = () => {
+  const {productImg,setProductImg}=useState([])
   const {stateCounter,dispatchCounter}=useContext(context1)
   const {stateProducts, dispatchProducts}=useContext(context1)
   const {stateCart, dispatchCart}=useContext(context1)
@@ -29,17 +31,7 @@ const Main = () => {
         })
     })
   }
-  
-  console.log(path.dirname())
-  console.log(__dirname)
-  console.log(path.resolve(__dirname,"..","..","assets","imgs"))
-  console.log(path.resolve(__dirname,"assets","imgs","img_dress.jpeg"))
-  console.log(path.join(__dirname,"..","..","assets","imgs"))
-  console.log(path.resolve("./../../assets/imgs/img_dress.jpeg"))
-  console.log(path.join("./../../assets/imgs/img_dress.jpeg"))
- 
-  console.log(path.basename("./../../assets/imgs/img_dress.jpeg"))
-  console.log("ALALAOAO")
+
 
   const array = [{name:"erick",cep:"mateuzim"},{name:"marcao",cep:"mateuzim"},{name:"lucqaas",cep:"mateuzim"},{name:"cavalo",cep:"mateuzim"},{name:"alan",cep:"mateuzim"},{name:"adam",cep:"mateuzim"},{name:"camaluto",cep:"mateuzim"},
   {name:"elsnru",cep:"mateuzim"},{name:"oipaeu",cep:"mateuzim"},{name:"paganois",cep:"mateuzim"},{name:"pagaeuno",cep:"mateuzim"},{name:"taquasela",cep:"mateuzim"},{name:"opafalacomigmeu",cep:"mateuzim"},{name:"goudglas",cep:"mateuzim"}];
@@ -48,12 +40,10 @@ const Main = () => {
     dispatchProducts({type:'Clear'})
     getAllProducts()
       .then((response)=>{
-        //console.log(response[0].data.img_name)
-       // console.log(response[0].data.price)
-       // console.log(response[0].ref["@ref"].id)
 
+        
         response.forEach(element => {
-      
+          
           dispatchProducts({type: 'ProductSet',product_name:element.data.product_name,product_price:element.data.price,img_path:element.data.img_name,id:element.ref["@ref"].id})  
         });
 
@@ -73,12 +63,15 @@ const Main = () => {
   }
   
   return (
-    <Container>      
+    <Container>     
+   
       {stateProducts.objects_products.map((obj,key)=>{
         
-        return (            
+        return (  
+            
           <ProductDiv key={key}>
-            <img src={dressImg} style={{height: "40%",width: 120}}></img>
+             
+            <img src={import("../../assets/imgs/img_dress.jpeg")} style={{height: "40%",width: 120}}></img>
             <Text fontsize={2} style={{marginTop:10,overflowWrap:"anywhere",textAlign:"center",height:"40%"}}>
                {obj.name}
             </Text>
@@ -91,6 +84,7 @@ const Main = () => {
               </Text>
             </Button>
         </ProductDiv>)
+        
       })}
     </Container>
   );
