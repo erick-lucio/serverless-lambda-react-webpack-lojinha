@@ -43,8 +43,12 @@ const Main = () => {
 
         
         response.forEach(element => {
-          
-          dispatchProducts({type: 'ProductSet',product_name:element.data.product_name,product_price:element.data.price,img_path:element.data.img_name,id:element.ref["@ref"].id})  
+          import("../../assets/imgs/"+element.data.img_name)
+            .then(importResponse=>{
+
+              dispatchProducts({type: 'ProductSet',product_name:element.data.product_name,product_price:element.data.price,img_path:importResponse,id:element.ref["@ref"].id})  
+            })
+         
         });
 
       })
@@ -56,7 +60,7 @@ const Main = () => {
     
 
     },[])
-
+    console.log(stateCart)
   const addToCart = (name,imgPath,price,refId) =>{
     dispatchCounter({type: 'increment'})
     dispatchCart({type: 'CartAdd',product_name:name,product_price:price,img_path:imgPath,id:refId})
@@ -64,7 +68,7 @@ const Main = () => {
   
   return (
     <Container>     
-   
+      
       {stateProducts.objects_products.map((obj,key)=>{
         
         return (  
