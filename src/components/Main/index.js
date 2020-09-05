@@ -29,8 +29,8 @@ const Main = () => {
         })
     })
   }
-  var asas = path.resolve(__dirname,"src","assets","imgs")
-  console.log(asas)
+  var img_path = path.resolve(__dirname,"src","assets","imgs")
+  console.log(path.resolve(img_path,"img_dress.jpeg"))
 
 
   const array = [{name:"erick",cep:"mateuzim"},{name:"marcao",cep:"mateuzim"},{name:"lucqaas",cep:"mateuzim"},{name:"cavalo",cep:"mateuzim"},{name:"alan",cep:"mateuzim"},{name:"adam",cep:"mateuzim"},{name:"camaluto",cep:"mateuzim"},
@@ -67,10 +67,10 @@ const Main = () => {
   return (
     <Container>      
       {stateProducts.objects_products.map((obj,key)=>{
-        {console.log(asas+obj.img_path)}
+        
         return (            
           <ProductDiv key={key}>
-            <img url="../../assets/imgs/img_dress.jpeg" style={{height: "40%",width: 120}}></img>
+            <img url={path.resolve(img_path,obj.img_path)} style={{height: "40%",width: 120}}></img>
             <Text fontsize={2} style={{marginTop:10,overflowWrap:"anywhere",textAlign:"center",height:"40%"}}>
                {obj.name}
             </Text>
