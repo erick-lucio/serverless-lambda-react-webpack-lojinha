@@ -1,12 +1,9 @@
 import React, { useEffect, useState, useReducer, useContext } from "react";
 import { Container, ProductDiv, Text, Button } from "./styles";
-import dressImg from "../../assets/imgs/img_dress.jpeg";
+
 import shopCart from "../../assets/icons/icons8-add-shopping-cart-64.png";
 import { context1 } from "../../Context";
-import fetchFunctions from "../../utils/api";
-import path from "path";
-import { getImagesNames } from "../../../scripts/insertDBImageNames";
-import crypto from "crypto-js"
+
 const Main = () => {
   const { productImg, setProductImg } = useState([]);
   const { stateCounter, dispatchCounter } = useContext(context1);
@@ -28,22 +25,7 @@ const Main = () => {
     });
   }
 
-  const array = [
-    { name: "erick", cep: "mateuzim" },
-    { name: "marcao", cep: "mateuzim" },
-    { name: "lucqaas", cep: "mateuzim" },
-    { name: "cavalo", cep: "mateuzim" },
-    { name: "alan", cep: "mateuzim" },
-    { name: "adam", cep: "mateuzim" },
-    { name: "camaluto", cep: "mateuzim" },
-    { name: "elsnru", cep: "mateuzim" },
-    { name: "oipaeu", cep: "mateuzim" },
-    { name: "paganois", cep: "mateuzim" },
-    { name: "pagaeuno", cep: "mateuzim" },
-    { name: "taquasela", cep: "mateuzim" },
-    { name: "opafalacomigmeu", cep: "mateuzim" },
-    { name: "goudglas", cep: "mateuzim" },
-  ];
+
   useEffect(() => {
     //Da um get  e pega o id de produtos e o joga pro reducer
     dispatchProducts({ type: "Clear" });
@@ -78,7 +60,7 @@ const Main = () => {
       id: refId,
     });
   };
-  console.log(crypto.randomBytes(64).toString('hex'))
+  console.log(Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5))
   return (
     <Container>     
       {stateProducts.objects_products.map((obj, key) => {
