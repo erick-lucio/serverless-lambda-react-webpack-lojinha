@@ -30,7 +30,9 @@ const Main = () => {
     })
   }
   
-  console.log(path.resolve(__dirname,"..","..","assets","imgs","img_dress.jpeg"))
+  console.log(path.dirname)
+  console.log(__dirname)
+  console.log(path.resolve(__dirname,"..","..","assets","imgs"))
 
 
   const array = [{name:"erick",cep:"mateuzim"},{name:"marcao",cep:"mateuzim"},{name:"lucqaas",cep:"mateuzim"},{name:"cavalo",cep:"mateuzim"},{name:"alan",cep:"mateuzim"},{name:"adam",cep:"mateuzim"},{name:"camaluto",cep:"mateuzim"},
@@ -70,7 +72,7 @@ const Main = () => {
         
         return (            
           <ProductDiv key={key}>
-            <img src={require(path.resolve(__dirname,"..","..","assets","imgs","img_dress.jpeg"))} style={{height: "40%",width: 120}}></img>
+            <img src={dressImg} style={{height: "40%",width: 120}}></img>
             <Text fontsize={2} style={{marginTop:10,overflowWrap:"anywhere",textAlign:"center",height:"40%"}}>
                {obj.name}
             </Text>
