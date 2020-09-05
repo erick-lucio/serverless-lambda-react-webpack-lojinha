@@ -42,7 +42,7 @@ const Main = () => {
 
         response.forEach(element => {
       
-          dispatchProducts({type: 'ProductSet',product_name:element.data.product_name,product_price:element.data.price,img_path:"../../assets/imgs/"+element.data.img_name,id:element.ref["@ref"].id})  
+          dispatchProducts({type: 'ProductSet',product_name:element.data.product_name,product_price:element.data.price,img_path:element.data.img_name,id:element.ref["@ref"].id})  
         });
 
       })
@@ -70,10 +70,10 @@ const Main = () => {
   return (
     <Container>      
       {stateProducts.objects_products.map((obj,key)=>{
-        {console.log(obj.img_path)}
+        
         return (            
           <ProductDiv key={key}>
-            <img url={import(obj.img_path)} style={{height: "40%",width: 120}}></img>
+            <img url={images[img_path]} style={{height: "40%",width: 120}}></img>
             <Text fontsize={2} style={{marginTop:10,overflowWrap:"anywhere",textAlign:"center",height:"40%"}}>
                {obj.name}
             </Text>
