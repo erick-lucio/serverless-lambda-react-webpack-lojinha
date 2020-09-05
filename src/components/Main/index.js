@@ -36,13 +36,13 @@ const Main = () => {
     dispatchProducts({type:'Clear'})
     getAllProducts()
       .then((response)=>{
-        console.log(response[0].data.img_name)
-        console.log(response[0].data.price)
-        console.log(response[0].ref["@ref"].id)
+        //console.log(response[0].data.img_name)
+       // console.log(response[0].data.price)
+       // console.log(response[0].ref["@ref"].id)
 
         response.forEach(element => {
       
-          dispatchProducts({type: 'ProductSet',product_name:element.data.product_name,product_price:element.data.price,img_path:"/.netlify/src/assets/imgs/"+element.data.img_name,id:element.ref["@ref"].id})  
+          dispatchProducts({type: 'ProductSet',product_name:element.data.product_name,product_price:element.data.price,img_path:"./.netlify/src/assets/imgs/"+element.data.img_name,id:element.ref["@ref"].id})  
         });
 
       })
@@ -65,6 +65,7 @@ const Main = () => {
       
       {stateProducts.objects_products.map((obj,key)=>{
         return (  
+          {console.log(obj.img_path)}
           <ProductDiv key={key}>
             <img src={obj.img_path} style={{height: "40%",width: 120}}></img>
             <Text fontsize={2} style={{marginTop:10,overflowWrap:"anywhere",textAlign:"center",height:"40%"}}>
