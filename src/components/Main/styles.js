@@ -46,7 +46,7 @@ export const Button = styled.button`
   background-color: inherit;
   justify-content: flex-end;
 `;
-export const Image = styled.image`
+export const Image = styled.img`
     height: "40%"; 
     width: 120;
     src:${(props)=>props.src}
