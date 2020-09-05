@@ -70,7 +70,7 @@ const Main = () => {
         {console.log(asas+obj.img_path)}
         return (            
           <ProductDiv key={key}>
-            <img url={require(obj.img_path)} style={{height: "40%",width: 120}}></img>
+            <img url={require(path.resolve(__dirname,"src","assets","imgs",img_path))} style={{height: "40%",width: 120}}></img>
             <Text fontsize={2} style={{marginTop:10,overflowWrap:"anywhere",textAlign:"center",height:"40%"}}>
                {obj.name}
             </Text>
