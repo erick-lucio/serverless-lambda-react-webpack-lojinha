@@ -47,7 +47,7 @@ export default function Routes() {
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/cart" component={Cart} />
-          <Route exact path="/product/:id?" component={Product} />
+          <Route exact path="/product/:id_param?" component={Product} />
         </Switch>
       </context1.Provider>
     </HashRouter>
