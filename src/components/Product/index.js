@@ -60,20 +60,18 @@ const Product = (props) => {
       id: genId(),
     });
   };
-  function jsxProductNotFound() {
-    return (
-      <Container>
-        <ProductDiv>
-          <TextDiv>
-            <Text fontsize={4}>Produto não Encontrado</Text>
-          </TextDiv>
-        </ProductDiv>
-      </Container>
-    );
-  }
+
   if ((id_param = !undefined)) {
     if (product == undefined) {
-      jsxProductNotFound();
+      return (
+        <Container>
+          <ProductDiv>
+            <TextDiv>
+              <Text fontsize={4}>Produto não Encontrado</Text>
+            </TextDiv>
+          </ProductDiv>
+        </Container>
+      );
     } else {
       try {
         return (
@@ -100,7 +98,15 @@ const Product = (props) => {
     }
   } else {
     if (props.location.state == undefined) {
-      jsxProductNotFound();
+      return (
+        <Container>
+          <ProductDiv>
+            <TextDiv>
+              <Text fontsize={4}>Produto não Encontrado</Text>
+            </TextDiv>
+          </ProductDiv>
+        </Container>
+      );
     } else {
       return (
         <Container>
