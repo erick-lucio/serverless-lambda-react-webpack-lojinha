@@ -11,7 +11,14 @@ const Header = () => {
   function getAllPurchases() {
     return fetch("/.netlify/functions/read-all-purchases").then((response) => {
       return response.json().then((json) => {
-        console.log(json);
+        console.log("Lista de compras efetudas no site")
+        json.forEach(element => {
+          console.log("Produto :"+element.data.name)
+          console.log("Preço :"+element.data.price)
+          element.data.date?console.log(element.data.date):console.log("Esta compra n possui data")
+          console.log("Id compra: ",element.ref["@ref"].id)
+        });
+        
       });
     });
   }
