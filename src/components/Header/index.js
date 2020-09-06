@@ -11,16 +11,11 @@ const Header = () => {
   function getAllPurchases() {
     return fetch("/.netlify/functions/read-all-purchases").then((response) => {
       return response.json().then((json) => {
-        return json;
+        console.log(json);
       });
     });
   }
-  function logPurchases(){
-    getAllPurchases()
-      .then((dataPurchase) =>{
-        console.log(dataPurchase)
-      })
-  }
+
   useEffect(() => {}, []);
   return (
     <Container>
@@ -36,7 +31,7 @@ const Header = () => {
         ></img>
       </Link>
 
-      <Text fontsize={3.5} onClick={() => logPurchases()}>
+      <Text fontsize={3.5} onClick={() => getAllPurchases()}>
         Erick Web Store
       </Text>
       <StyledLink to="/cart">
