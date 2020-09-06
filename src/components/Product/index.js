@@ -17,7 +17,7 @@ const Product = (props) => {
   const { stateCounter, dispatchCounter, stateCart, dispatchCart } = useContext(
     context1
   );
-  const {product ,setProduct}=useState()
+  const [product ,setProduct]=useState()
   let {id_param} = useParams() 
   function genId() {
     return Math.random()
@@ -44,7 +44,7 @@ const Product = (props) => {
             price:response.data.price,      
             img_path:img.default
           })
-          console.log(response)
+          
         })
 
       
