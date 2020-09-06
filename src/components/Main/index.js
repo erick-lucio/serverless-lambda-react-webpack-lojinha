@@ -64,7 +64,7 @@ const Main = () => {
     return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 35)
   }
   function redirect(){
-    history.push({pathname:'/cart',state:{detail:"opa meu vei"}})
+    history.push({pathname:'/product',state:{detail:"opa meu vei"}})
   }
   return (
     <Container>  
