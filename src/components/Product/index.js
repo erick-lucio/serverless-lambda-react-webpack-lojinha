@@ -37,10 +37,9 @@ const Product = (props) => {
     .then((response)=>{
       import("../../assets/imgs/" + response.data.img_name)
         .then((img)=>{
-          console.log(response)
-          console.log(setProduct)
+
           setProduct({
-            name:response.data.name,
+            name:response.data.product_name,
             price:response.data.price,      
             img_path:img.default
           })
