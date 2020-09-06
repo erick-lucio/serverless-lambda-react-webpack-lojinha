@@ -9,6 +9,7 @@ import {
   Button2,
   Image2,
 } from "./styles";
+import { useHistory } from "react-router-dom";
 import { useParams } from "react-router";
 import addCart from "../../assets/icons/icons8-add-shopping-cart-64.png";
 import DefaultImg from "../../assets/imgs/img_dress.jpeg"
@@ -17,6 +18,7 @@ const Product = (props) => {
   const { stateCounter, dispatchCounter, stateCart, dispatchCart } = useContext(
     context1
   );
+  let history = useHistory();
   const [product ,setProduct]=useState()
   let {id_param} = useParams() 
   function genId() {
@@ -76,6 +78,7 @@ const Product = (props) => {
           <ProductDiv>           
             <TextDiv>
               <Text fontsize={4}>Produto não Encontrado</Text>
+              <Text fontsize={3} onClick={()=>history.push("/")}>Voltar ao menu principal</Text>
             </TextDiv>
           </ProductDiv>
         </Container>

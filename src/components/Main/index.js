@@ -59,7 +59,7 @@ const Main = () => {
 
     });
   }
-  console.log(stateProducts)
+ 
   return (
     <Container>
       {stateProducts.objects_products.map((obj, key) => {
