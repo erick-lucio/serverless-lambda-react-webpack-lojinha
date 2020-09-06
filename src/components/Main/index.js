@@ -3,7 +3,7 @@ import { Container, ProductDiv, Text, Button, Image } from "./styles";
 import { useHistory } from "react-router-dom";
 import shopCart from "../../assets/icons/icons8-add-shopping-cart-64.png";
 import { context1 } from "../../Context";
-
+import { useParams } from "react-router";
 const Main = () => {
   const { productImg, setProductImg } = useState([]);
   const { stateCounter, dispatchCounter } = useContext(context1);
@@ -56,7 +56,7 @@ const Main = () => {
       .replace(/[^a-z]+/g, "")
       .substr(0, 35);
   }
-  function redirect(productName, productImg, productPrice, productRef) {
+  function redirect(productName, productImg, productPrice) {
     history.push({
       pathname: "/product",
       state: {
@@ -75,7 +75,7 @@ const Main = () => {
             <Image
               src={obj.img_path}
               onClick={() =>
-                redirect(obj.name, obj.img_path, obj.price, genId())
+                redirect(obj.name, obj.img_path, obj.price)
               }
             ></Image>
             <Text
