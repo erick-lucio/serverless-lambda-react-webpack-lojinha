@@ -88,12 +88,11 @@ const Product = (props) => {
     );
   }else{
     if(product == undefined){
-      }
       return (
         <Container>
           <ProductDiv>           
             <TextDiv>
-              <Text fontsize={4}>Produto Nao encontrado</Text>
+              <Text fontsize={4}>Produto não Encontrado</Text>
             </TextDiv>
           </ProductDiv>
         </Container>
