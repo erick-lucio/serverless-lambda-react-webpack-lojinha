@@ -13,10 +13,12 @@ const Header = () => {
       return response.json().then((json) => {
         console.log("Lista de compras efetudas no site")
         json.forEach(element => {
+          console.log("###############")
           console.log("Produto :"+element.data.name)
-          console.log("Preço :"+element.data.price)
-          element.data.date?console.log(element.data.date):console.log("Esta compra n possui data")
+          console.log("Preço :"+element.data.price+"Reais")
+          element.data.date?console.log(Date(element.data.date)):console.log("Esta compra n possui data")
           console.log("Id compra: ",element.ref["@ref"].id)
+          console.log("###############")
         });
         
       });
