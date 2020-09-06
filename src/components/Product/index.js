@@ -90,7 +90,7 @@ const Product = (props) => {
     if(product == undefined){
       let product_condition = "Carregando Produto"
       function changeCondition(product_condition){
-        sleep(4000);
+        
         return product_condition
       }
       return (
