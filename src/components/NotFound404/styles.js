@@ -29,6 +29,9 @@ export const Text = styled.span`
   font-family: Arial, Helvetica, sans-serif;
   font-size: ${(props) => props.fontsize}rem;
   margin-top: ${(props) => props.margintop || 0}px;
+  &:hover {
+    color:rgba(155, 55, 255, 1);
+  }
 `;
 export const Button = styled.button`
   border: none;
@@ -43,9 +46,7 @@ export const Image = styled.img`
   margin-top: 30px;
   src: ${(props) => props.src};
   border: 4px double rgb(0, 0, 0);
-  &:hover {
-    color:rgba(155, 55, 255, 1);
-  }
+
 `;
 export const TextDiv = styled.div`
   margin-left: 300px;
