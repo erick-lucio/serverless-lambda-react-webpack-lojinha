@@ -26,7 +26,7 @@ const Header = () => {
         ></img>
       </Link>
 
-      <Text fontsize={3.5} onClick={() => console.log("stateProducts")}>
+      <Text fontsize={3.5} onClick={() => alert("Loja do Erick")}>
         Erick Web Store
       </Text>
       <StyledLink to="/cart">

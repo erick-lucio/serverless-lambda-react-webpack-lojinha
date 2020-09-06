@@ -4,11 +4,12 @@ import { Container, Text, ItensDiv, Button } from "./styles";
 import dressImg from "../../assets/imgs/img_dress.jpeg";
 import removeIcon from "../../assets/icons/icons8-remove-64.png";
 import { context1 } from "../../Context";
-
+import {useHistory } from "react-router-dom"
 const Cart = () => {
   const { stateCounter, dispatchCounter } = useContext(context1);
   const { stateProducts, dispatchProducts } = useContext(context1);
   const { stateCart, dispatchCart } = useContext(context1);
+  let history = useHistory();
   useEffect(() => {}, []);
   useEffect(() => {}, [stateCart]);
   const removeProduct = (ref_id) => {
@@ -35,6 +36,7 @@ const Cart = () => {
     dispatchCounter({ type: "set",count:0 });
     dispatchCart({ type: "Clear" });
     alert("Parabens Compra finalizada com sucesso")
+    history.push("/")
   };
   return (
     <Container>

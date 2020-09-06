@@ -57,7 +57,7 @@ export default function Routes() {
           <Route exact path="/" component={Main} />
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/product" component={Product} />
-          <Route path="/" component={Main} />
+          
         </Switch>
       </context1.Provider>
     </HashRouter>
