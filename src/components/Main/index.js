@@ -68,7 +68,7 @@ const Main = () => {
           <ProductDiv key={key}>
             <Image
               src={obj.img_path}
-              onClick={() => redirect(obj.id)}
+              onClick={() => redirect(obj.ref_id)}
             ></Image>
             <Text
               fontsize={2}
