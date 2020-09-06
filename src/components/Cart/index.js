@@ -48,7 +48,7 @@ const Cart = () => {
               <ItensDiv key={key}>
                 <img
                   src={cart_obj.img_path}
-                  style={{ height: 120, width: "30%",borderRadius:"5px" }}
+                  style={{ height: 120, borderRadius:"5px" }}
                 ></img>
                 <Text fontsize={2}>
                   {cart_obj.name}
