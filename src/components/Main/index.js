@@ -94,7 +94,7 @@ const Main = () => {
                 height: "10%",
               }}
             >
-              R$:{obj.price}Reais
+              R$:{obj.price} Reais
             </Text>
             <Button
               onClick={() =>
