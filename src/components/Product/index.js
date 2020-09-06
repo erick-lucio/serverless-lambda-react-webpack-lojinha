@@ -61,10 +61,8 @@ const Product = (props) => {
     });
   };
 
-  if (id_param =! undefined) {
-    console.log(1)
+  if ((id_param = !undefined)) {
     if (product == undefined) {
-      console.log("product == undefined")
       return (
         <Container>
           <ProductDiv>
@@ -75,7 +73,6 @@ const Product = (props) => {
         </Container>
       );
     } else {
-      console.log("product != undefined")
       try {
         return (
           <Container>
@@ -100,9 +97,7 @@ const Product = (props) => {
       } catch (error) {}
     }
   } else {
-    console.log(2)
     if (props.location.state == undefined) {
-      console.log("props.location.state == undefined")
       return (
         <Container>
           <ProductDiv>
@@ -113,7 +108,6 @@ const Product = (props) => {
         </Container>
       );
     } else {
-      console.log("props.location.state != undefined")
       return (
         <Container>
           <ProductDiv>
