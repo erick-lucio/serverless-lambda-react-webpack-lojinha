@@ -59,10 +59,11 @@ const Main = () => {
 
     });
   }
+  console.log(stateProducts)
   return (
     <Container>
       {stateProducts.objects_products.map((obj, key) => {
-        console.log(obj.id)
+        
         return (
           <ProductDiv key={key}>
             <Image
