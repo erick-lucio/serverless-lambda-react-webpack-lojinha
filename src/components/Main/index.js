@@ -18,7 +18,6 @@ const Main = () => {
     });
   }
 
-
   useEffect(() => {
     dispatchProducts({ type: "Clear" });
     getAllProducts().then((response) => {
@@ -36,10 +35,8 @@ const Main = () => {
         );
       });
     });
-
-    
   }, []);
-  
+
   const addToCart = (name, imgPath, price, refId) => {
     dispatchCounter({ type: "increment" });
     dispatchCart({
@@ -62,7 +59,7 @@ const Main = () => {
       state: {
         name: productName,
         imgPath: productImg,
-        price: productPrice,        
+        price: productPrice,
       },
     });
   }
@@ -73,9 +70,7 @@ const Main = () => {
           <ProductDiv key={key}>
             <Image
               src={obj.img_path}
-              onClick={() =>
-                redirect(obj.name, obj.img_path, obj.price)
-              }
+              onClick={() => redirect(obj.name, obj.img_path, obj.price)}
             ></Image>
             <Text
               fontsize={2}

@@ -49,7 +49,7 @@ export default function Routes() {
           <Route exact path="/" component={Main} />
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/product/:id_param?" component={Product} />
-          <Route path="*" component={NotFound}/>
+          <Route path="*" component={NotFound} />
         </Switch>
       </context1.Provider>
     </HashRouter>

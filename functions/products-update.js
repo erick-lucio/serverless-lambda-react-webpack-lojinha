@@ -8,7 +8,7 @@ exports.handler = async (event) => {
   });
   const data = JSON.parse(event.body);
   const id = event.queryStringParameters.id;
-  
+
   return client
     .query(q.Update(q.Ref(`classes/products/${id}`), { data }))
     .then((response) => {

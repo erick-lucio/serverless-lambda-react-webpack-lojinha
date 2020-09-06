@@ -8,7 +8,7 @@ exports.handler = async (event) => {
     secret: process.env.SECRET_KEY_FAUNA,
   });
   const id = event.queryStringParameters.id;
- 
+
   return client
     .query(q.Delete(q.Ref(`classes/products/${id}`)))
     .then((response) => {

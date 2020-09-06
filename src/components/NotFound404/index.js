@@ -1,20 +1,12 @@
-import React, { useContext ,useState,useEffect} from "react";
-import {
-  Container,
-  ProductDiv,
-  TextDiv,
-  Text,
-} from "./styles";
+import React, { useContext, useState, useEffect } from "react";
+import { Container, ProductDiv, TextDiv, Text } from "./styles";
 
 const NotFound = (props) => {
-
   return (
     <Container>
-      <ProductDiv>           
+      <ProductDiv>
         <TextDiv>
           <Text fontsize={4}>Pagina Não Encontrada</Text>
-
-
         </TextDiv>
       </ProductDiv>
     </Container>
