@@ -67,9 +67,9 @@ const Product = (props) => {
     return (
       <Container>
         <ProductDiv>
-          <TextDiv>
+          <TextDiv onClick={() => history.push("/")}>
             <Text fontsize={4}>Produto não Encontrado</Text>
-            <Text fontsize={3} onClick={() => history.push("/")}>
+            <Text fontsize={3} >
               Voltar ao menu principal
             </Text>
           </TextDiv>
