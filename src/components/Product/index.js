@@ -58,9 +58,9 @@ const Product = (props) => {
     dispatchCounter({ type: "increment" });
     dispatchCart({
       type: "CartAdd",
-      product_name: props.location.state.name,
-      product_price: props.location.state.price,
-      img_path: props.location.state.imgPath,
+      product_name: product.name || props.location.state.name,
+      product_price: product.price || props.location.state.price,
+      img_path: product.img_path || props.location.state.imgPath,
       id: genId(),
     });
   };
@@ -88,13 +88,16 @@ const Product = (props) => {
     );
   }else{
     if(product == undefined){
+      let product_condition = "Carregando Produto"
+      function changeCondition(product_condition){
+        sleep(4000);
+        return product_condition
+      }
       return (
         <Container>
           <ProductDiv>           
             <TextDiv>
-              <Text fontsize={4}>Carregando Produto</Text>
-
-
+              <Text fontsize={4}>{()=>changeCondition(product_condition)}</Text>
             </TextDiv>
           </ProductDiv>
         </Container>
