@@ -53,14 +53,10 @@ const Main = () => {
       .replace(/[^a-z]+/g, "")
       .substr(0, 35);
   }
-  function redirect(productName, productImg, productPrice) {
+  function redirect(productId) {
     history.push({
-      pathname: "/product",
-      state: {
-        name: productName,
-        imgPath: productImg,
-        price: productPrice,
-      },
+      pathname: "/product/"+productId,
+
     });
   }
   return (
@@ -70,7 +66,7 @@ const Main = () => {
           <ProductDiv key={key}>
             <Image
               src={obj.img_path}
-              onClick={() => redirect(obj.name, obj.img_path, obj.price)}
+              onClick={() => redirect(obj.id)}
             ></Image>
             <Text
               fontsize={2}

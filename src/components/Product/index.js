@@ -63,35 +63,13 @@ const Product = (props) => {
     dispatchCounter({ type: "increment" });
     dispatchCart({
       type: "CartAdd",
-      product_name: product.name || props.location.state.name,
-      product_price: product.price || props.location.state.price,
-      img_path: product.img_path || props.location.state.imgPath,
+      product_name: product.name ,
+      product_price: product.price ,
+      img_path: product.img_path ,
       id: genId(),
     });
-  };
-  
-  if(id_param == undefined){
-    return (
-      <Container>
-        <ProductDiv>
-          <Image src={props.location.state.imgPath}></Image>
-          <TextDiv>
-            <Text fontsize={3}>{props.location.state.name}</Text>
-            <Text fontsize={2.5} margintop={30}>
-              Por apenas {props.location.state.price} reais
-            </Text>
-            <Text fontsize={2.5} margintop={50}>
-              Perfeito para todas as ocasiões
-            </Text>
-            <Button2 onClick={() => addToCart()}>
-              <Image2 src={addCart}></Image2>
-              <Text fontsize={1.5}>Adicione ja ao Carrinho</Text>
-            </Button2>
-          </TextDiv>
-        </ProductDiv>
-      </Container>
-    );
-  }else{
+  };  
+
     if(product == undefined){
       return (
         <Container>
@@ -130,7 +108,7 @@ const Product = (props) => {
 
     }
 
-  }
+  
 
 };
 
