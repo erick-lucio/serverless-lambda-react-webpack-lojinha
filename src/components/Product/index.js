@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext ,useState,useEffect} from "react";
 import {
   Container,
   ProductDiv,
@@ -11,45 +11,54 @@ import {
 } from "./styles";
 import { useParams } from "react-router";
 import addCart from "../../assets/icons/icons8-add-shopping-cart-64.png";
-import DefaultImg from "../../assets/imgs/img_dress.jpeg";
+import DefaultImg from "../../assets/imgs/img_dress.jpeg"
 import { context1 } from "../../Context";
 const Product = (props) => {
   const { stateCounter, dispatchCounter, stateCart, dispatchCart } = useContext(
     context1
   );
-  const [product, setProduct] = useState();
-  let { id_param } = useParams();
+  const [product ,setProduct]=useState()
+  let {id_param} = useParams() 
   function genId() {
     return Math.random()
       .toString(36)
       .replace(/[^a-z]+/g, "")
       .substr(0, 35);
   }
-  function getProduct() {
+  function getProduct() {  
     try {
-      return fetch("/.netlify/functions/read-product?id=" + id_param).then(
-        (response) => {
-          return response.json().then((json) => {
-            return json;
-          });
-        }
-      );
-    } catch (error) {}
+      return fetch("/.netlify/functions/read-product?id="+id_param).then((response) => {
+        return response.json().then((json) => {
+          return json;
+        });
+      });
+    } catch (error) {
+      
+    }
   }
   useEffect(() => {
-    getProduct().then((response) => {
-      if (response.data != undefined) {
-        import("../../assets/imgs/" + response.data.img_name).then((img) => {
+    getProduct()
+    .then((response)=>{
+      if(response.data != undefined){
+        import("../../assets/imgs/" + response.data.img_name)
+        .then((img)=>{
+
           setProduct({
-            name: response.data.product_name,
-            price: response.data.price,
-            img_path: img.default,
-          });
-        });
+            name:response.data.product_name,
+            price:response.data.price,      
+            img_path:img.default
+          })
+          
+        })
       }
-    });
+
+
+      
+    })
+    
   }, []);
-  useEffect(() => {}, [product]);
+  useEffect(() => {    
+  }, [product]);
   const addToCart = () => {
     dispatchCounter({ type: "increment" });
     dispatchCart({
@@ -60,8 +69,8 @@ const Product = (props) => {
       id: genId(),
     });
   };
-
-  if (id_param == undefined || props.location.state != undefined) {
+  
+  if(id_param == undefined){
     return (
       <Container>
         <ProductDiv>
@@ -82,18 +91,18 @@ const Product = (props) => {
         </ProductDiv>
       </Container>
     );
-  } else {
-    if (id_param == undefined || props.location.state == undefined) {
+  }else{
+    if(product == undefined){
       return (
         <Container>
-          <ProductDiv>
+          <ProductDiv>           
             <TextDiv>
               <Text fontsize={4}>Produto não Encontrado</Text>
             </TextDiv>
           </ProductDiv>
         </Container>
       );
-    } else {
+    }else{
       try {
         return (
           <Container>
@@ -102,7 +111,7 @@ const Product = (props) => {
               <TextDiv>
                 <Text fontsize={3}>{product.name}</Text>
                 <Text fontsize={2.5} margintop={30}>
-                  Por apenas {product.price} reais
+                  Por apenas  {product.price} reais
                 </Text>
                 <Text fontsize={2.5} margintop={50}>
                   Perfeito para todas as ocasiões
@@ -115,9 +124,14 @@ const Product = (props) => {
             </ProductDiv>
           </Container>
         );
-      } catch (error) {}
+      } catch (error) {
+        
+      }
+
     }
+
   }
+
 };
 
 export default Product;
