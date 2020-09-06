@@ -8,7 +8,7 @@ const Product = (props) => {
   const { stateCounter, dispatchCounter } = useContext(context1);
   const { stateCart, dispatchCart } = useContext(context1);
   
-  const addToCart = (name, imgPath, price, refId) => {
+  const addToCart = () => {
     dispatchCounter({ type: "increment" });
     dispatchCart({
       type: "CartAdd",
@@ -21,12 +21,12 @@ const Product = (props) => {
   return (
     <Container>
       <ProductDiv>
-        <Image src={imf}></Image>
+        <Image src={props.location.state.imgPath}></Image>
         <TextDiv>
-          <Text fontsize={3} >Vestido bunito</Text>
-          <Text fontsize={2.5}margintop={30}>Por apenas 3 reais</Text>          
+          <Text fontsize={3} >{props.location.state.name}</Text>
+          <Text fontsize={2.5}margintop={30}>Por apenas {props.location.state.price} reais</Text>          
           <Text fontsize={2.5}margintop={50}>Perfeito para todas as ocasiões</Text>
-          <Button2><Image2 src={addCart} ></Image2><Text fontsize={1.5}>Adicione ja ao Carrinho</Text></Button2>
+          <Button2 onClick={()=>addToCart()}><Image2 src={addCart} ></Image2><Text fontsize={1.5}>Adicione ja ao Carrinho</Text></Button2>
           
         </TextDiv>
 
