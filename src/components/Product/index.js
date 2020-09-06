@@ -43,7 +43,7 @@ const Product = (props) => {
     });
   };
   
-  if(props.location.state){
+  if(props.location.state.name){
     return (
       <Container>
         <ProductDiv>
