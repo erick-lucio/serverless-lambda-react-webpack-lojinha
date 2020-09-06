@@ -17,7 +17,6 @@ exports.handler = async (event) => {
       };
     })
     .catch((error) => {
-      
       return {
         statusCode: 200,
         body: JSON.stringify(error),
