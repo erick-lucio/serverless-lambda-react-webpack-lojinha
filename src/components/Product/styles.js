@@ -29,6 +29,9 @@ export const Text = styled.span`
   font-family: Arial, Helvetica, sans-serif;
   font-size: ${(props) => props.fontsize}rem;
   margin-top: ${(props) => props.margintop || 0}px;
+  &:hover {
+    color:rgba(155, 55, 255, 1);
+  }
 `;
 export const Button = styled.button`
   border: none;
