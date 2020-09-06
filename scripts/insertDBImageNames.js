@@ -9,7 +9,7 @@ export const getImagesNames = () => {
   const importAll = (r) => r.keys().map((file) => file.match(/[^\/]+$/)[0]);
   importAll(r).forEach((element) => {
     let productData = {
-      product_name: "Roupa "+count,
+      product_name: "Roupa " + count,
       price: Math.floor(Math.random() * (500 - 59 + 1)) + 59,
       img_name: element,
     };

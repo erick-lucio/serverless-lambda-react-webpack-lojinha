@@ -1,14 +1,18 @@
-import React, { useEffect, useState, useReducer, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 
 import { Container, Text, ItensDiv, Button } from "./styles";
-import dressImg from "../../assets/imgs/img_dress.jpeg";
 import removeIcon from "../../assets/icons/icons8-remove-64.png";
 import { context1 } from "../../Context";
-import {useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom";
 const Cart = () => {
-  const { stateCounter, dispatchCounter } = useContext(context1);
-  const { stateProducts, dispatchProducts } = useContext(context1);
-  const { stateCart, dispatchCart } = useContext(context1);
+  const {
+    stateCounter,
+    dispatchCounter,
+    stateCart,
+    dispatchCart,
+    stateProducts,
+    dispatchProducts,
+  } = useContext(context1);
   let history = useHistory();
   useEffect(() => {}, []);
   useEffect(() => {}, [stateCart]);
@@ -19,8 +23,8 @@ const Cart = () => {
     // console.log(productName+" Removido do carrinho")
   };
   const completePurchase = (cartArray) => {
-    cartArray.forEach(element => {
-      element.date = Date.now()
+    cartArray.forEach((element) => {
+      element.date = Date.now();
       fetch("/.netlify/functions/insert-new-purchase", {
         body: JSON.stringify(element),
         method: "POST",
@@ -30,13 +34,11 @@ const Cart = () => {
         });
       });
     });
-    
 
-    
-    dispatchCounter({ type: "set",count:0 });
+    dispatchCounter({ type: "set", count: 0 });
     dispatchCart({ type: "Clear" });
-    alert("Parabens Compra finalizada com sucesso")
-    history.push("/")
+    alert("Parabens Compra finalizada com sucesso");
+    history.push("/");
   };
   return (
     <Container>
@@ -50,12 +52,9 @@ const Cart = () => {
               <ItensDiv key={key}>
                 <img
                   src={cart_obj.img_path}
-                  style={{ height: 120, borderRadius:"5px" }}
+                  style={{ height: 120, borderRadius: "5px" }}
                 ></img>
-                <Text fontsize={2}>
-                  {cart_obj.name}
-                 
-                </Text>
+                <Text fontsize={2}>{cart_obj.name}</Text>
                 <img
                   src={removeIcon}
                   style={{ height: 50, width: "auto", cursor: "pointer" }}

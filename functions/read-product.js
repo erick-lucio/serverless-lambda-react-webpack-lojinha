@@ -1,4 +1,3 @@
-
 const faunadb = require("faunadb");
 
 const q = faunadb.query;
@@ -12,7 +11,6 @@ exports.handler = async (event) => {
   return client
     .query(q.Get(q.Ref(`classes/products/${id}`)))
     .then((response) => {
-
       return {
         statusCode: 200,
         body: JSON.stringify(response),

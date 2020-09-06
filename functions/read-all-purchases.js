@@ -1,9 +1,7 @@
-
 const faunadb = require("faunadb");
 const q = faunadb.query;
 
 exports.handler = async (event) => {
- 
   const client = new faunadb.Client({
     secret: process.env.SECRET_KEY_FAUNA,
   });
@@ -12,10 +10,9 @@ exports.handler = async (event) => {
     .then((response) => {
       const todoRefs = response.data;
 
-     
       const getAllTodoDataQuery = todoRefs.map((ref) => {
         return q.Get(ref);
-      });     
+      });
       return client.query(getAllTodoDataQuery).then((ret) => {
         return {
           statusCode: 200,
@@ -24,7 +21,6 @@ exports.handler = async (event) => {
       });
     })
     .catch((error) => {
-     
       return {
         statusCode: 400,
         body: JSON.stringify(error),

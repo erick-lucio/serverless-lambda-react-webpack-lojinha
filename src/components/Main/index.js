@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useReducer, useContext } from "react";
-import { Container, ProductDiv, Text, Button ,Image} from "./styles";
-import {useHistory } from "react-router-dom"
+import React, { useEffect, useState, useContext } from "react";
+import { Container, ProductDiv, Text, Button, Image } from "./styles";
+import { useHistory } from "react-router-dom";
 import shopCart from "../../assets/icons/icons8-add-shopping-cart-64.png";
 import { context1 } from "../../Context";
 
@@ -25,9 +25,7 @@ const Main = () => {
     });
   }
 
-
   useEffect(() => {
-    //Da um get  e pega o id de produtos e o joga pro reducer
     dispatchProducts({ type: "Clear" });
     getAllProducts().then((response) => {
       response.forEach((element) => {
@@ -45,9 +43,7 @@ const Main = () => {
       });
     });
 
-    getAllPurchases().then((response) => {
-      //console.log(response)
-    });
+    getAllPurchases().then((response) => {});
   }, []);
 
   const addToCart = (name, imgPath, price, refId) => {
@@ -60,19 +56,34 @@ const Main = () => {
       id: refId,
     });
   };
-  function genId(){
-    return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 35)
+  function genId() {
+    return Math.random()
+      .toString(36)
+      .replace(/[^a-z]+/g, "")
+      .substr(0, 35);
   }
-  function redirect(productName,productImg,productPrice,productRef){
-    history.push({pathname:'/product',state:{name:productName, imgPath:productImg, price:productPrice, refId:productRef}})
+  function redirect(productName, productImg, productPrice, productRef) {
+    history.push({
+      pathname: "/product",
+      state: {
+        name: productName,
+        imgPath: productImg,
+        price: productPrice,
+        refId: productRef,
+      },
+    });
   }
   return (
-    <Container>  
-     
+    <Container>
       {stateProducts.objects_products.map((obj, key) => {
         return (
-          <ProductDiv key={key} >
-            <Image src={obj.img_path} onClick={()=>redirect(obj.name,obj.img_path,obj.price,genId())}></Image>
+          <ProductDiv key={key}>
+            <Image
+              src={obj.img_path}
+              onClick={() =>
+                redirect(obj.name, obj.img_path, obj.price, genId())
+              }
+            ></Image>
             <Text
               fontsize={2}
               style={{
@@ -98,7 +109,7 @@ const Main = () => {
             </Text>
             <Button
               onClick={() =>
-                addToCart(obj.name, obj.img_path, obj.price,genId())
+                addToCart(obj.name, obj.img_path, obj.price, genId())
               }
               style={{ marginButtom: "0", height: "auto" }}
             >

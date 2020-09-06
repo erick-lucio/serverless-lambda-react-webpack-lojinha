@@ -7,6 +7,7 @@ export const estadoInicialCounter = {
 export const estadoInicialProducts = {
   objects_products: [],
 };
+
 export function reducerCounter(state, action) {
   switch (action.type) {
     case "increment":

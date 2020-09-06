@@ -1,9 +1,7 @@
-
 const faunadb = require("faunadb");
 const q = faunadb.query;
 
 exports.handler = async (event) => {
-
   console.log("Function `todo-read-all` invoked");
 
   const client = new faunadb.Client({
@@ -13,7 +11,6 @@ exports.handler = async (event) => {
     .query(q.Paginate(q.Match(q.Ref("indexes/products_index"))))
     .then((response) => {
       const todoRefs = response.data;
-
 
       const getAllTodoDataQuery = todoRefs.map((ref) => {
         return q.Get(ref);
@@ -27,7 +24,6 @@ exports.handler = async (event) => {
       });
     })
     .catch((error) => {
- 
       return {
         statusCode: 400,
         body: JSON.stringify(error),

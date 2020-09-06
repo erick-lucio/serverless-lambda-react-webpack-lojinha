@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useReducer, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 
 import { Container, Text, StyledLink } from "./styles";
 import StoreImgIcon from "../../assets/icons/icons8-shop-96.png";
@@ -9,9 +9,7 @@ const Header = () => {
   const { stateCounter, dispatchCounter } = useContext(context1);
   const { stateCart, dispatchCart } = useContext(context1);
 
-  useEffect(() => {
-    //Da um get  e pega o id de produtos e o joga pro reducer
-  }, []);
+  useEffect(() => {}, []);
   return (
     <Container>
       <Link to="">

@@ -47,10 +47,9 @@ export const Button = styled.button`
   justify-content: flex-end;
 `;
 export const Image = styled.img`
-    height: 50%; 
-    width: 65%;
-    src:${(props)=>props.src};
-    border:3px double rgb(0,0,0);
-    cursor:pointer;
+  height: 50%;
+  width: 65%;
+  src: ${(props) => props.src};
+  border: 3px double rgb(0, 0, 0);
+  cursor: pointer;
 `;
-
