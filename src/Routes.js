@@ -6,6 +6,7 @@ import Main from "./components/Main/index";
 import Cart from "./components/Cart/index.js";
 import Header from "./components/Header/index.js";
 import Product from "./components/Product/index.js";
+import NotFound from "./components/NotFound404/index.js";
 import { context1 } from "./Context";
 import {
   reducerCart,
@@ -48,6 +49,7 @@ export default function Routes() {
           <Route exact path="/" component={Main} />
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/product/:id_param?" component={Product} />
+          <Route component={NotFound}/>
         </Switch>
       </context1.Provider>
     </HashRouter>

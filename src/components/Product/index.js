@@ -42,7 +42,7 @@ const Product = (props) => {
             price:response.data.price,      
             img_path:img.default
           })
-          console.log(product)
+          console.log(response)
         })
 
       
