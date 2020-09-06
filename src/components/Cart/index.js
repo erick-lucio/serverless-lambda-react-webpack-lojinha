@@ -34,6 +34,7 @@ const Cart = () => {
     
     dispatchCounter({ type: "set",count:0 });
     dispatchCart({ type: "Clear" });
+    alert("Parabens Compra finalizada com sucesso")
   };
   return (
     <Container>

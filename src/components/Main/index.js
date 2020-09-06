@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useReducer, useContext } from "react";
 import { Container, ProductDiv, Text, Button ,Image} from "./styles";
-
+import {useHistory } from "react-router-dom"
 import shopCart from "../../assets/icons/icons8-add-shopping-cart-64.png";
 import { context1 } from "../../Context";
 
@@ -9,7 +9,7 @@ const Main = () => {
   const { stateCounter, dispatchCounter } = useContext(context1);
   const { stateProducts, dispatchProducts } = useContext(context1);
   const { stateCart, dispatchCart } = useContext(context1);
-
+  let history = useHistory();
   function getAllProducts() {
     return fetch("/.netlify/functions/read-all-products").then((response) => {
       return response.json().then((json) => {
@@ -63,12 +63,15 @@ const Main = () => {
   function genId(){
     return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 35)
   }
-
+  function redirect(){
+    history.push({pathname:'/cart',state:{detail:"opa meu vei"}})
+  }
   return (
-    <Container>     
+    <Container>  
+     
       {stateProducts.objects_products.map((obj, key) => {
         return (
-          <ProductDiv key={key}>
+          <ProductDiv key={key} onClick={()=>redirect()}>
             <Image src={obj.img_path} ></Image>
             <Text
               fontsize={2}

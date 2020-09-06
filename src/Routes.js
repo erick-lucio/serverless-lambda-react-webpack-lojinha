@@ -12,6 +12,7 @@ import { createBrowserHistory } from "history";
 import Main from "./components/Main/index";
 import Cart from "./components/Cart/index.js";
 import Header from "./components/Header/index.js";
+import Product from "./components/Product/index.js";
 import { context1 } from "./Context";
 import {
   reducerCart,
@@ -55,6 +56,8 @@ export default function Routes() {
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/cart" component={Cart} />
+          <Route exact path="/product" component={Product} />
+          <Route path="/" component={Main} />
         </Switch>
       </context1.Provider>
     </HashRouter>
