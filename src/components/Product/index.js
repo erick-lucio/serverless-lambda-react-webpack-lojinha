@@ -88,42 +88,42 @@ const Product = (props) => {
     );
   }else{
     if(product == undefined){
-      let product_condition = "Carregando Produto"
-      function changeCondition(product_condition){
-        
-        product_condition = "Produto Nao encontrado"
-        return product_condition
       }
       return (
         <Container>
           <ProductDiv>           
             <TextDiv>
-              <Text fontsize={4}>{changeCondition(product_condition)}</Text>
+              <Text fontsize={4}>Produto Nao encontrado</Text>
             </TextDiv>
           </ProductDiv>
         </Container>
       );
     }else{
-      return (
-        <Container>
-          <ProductDiv>
-            <Image src={product.img_path}></Image>
-            <TextDiv>
-              <Text fontsize={3}>{product.name}</Text>
-              <Text fontsize={2.5} margintop={30}>
-                Por apenas  {product.price} reais
-              </Text>
-              <Text fontsize={2.5} margintop={50}>
-                Perfeito para todas as ocasiões
-              </Text>
-              <Button2 onClick={() => addToCart()}>
-                <Image2 src={addCart}></Image2>
-                <Text fontsize={1.5}>Adicione ja ao Carrinho</Text>
-              </Button2>
-            </TextDiv>
-          </ProductDiv>
-        </Container>
-      );
+      try {
+        return (
+          <Container>
+            <ProductDiv>
+              <Image src={product.img_path}></Image>
+              <TextDiv>
+                <Text fontsize={3}>{product.name}</Text>
+                <Text fontsize={2.5} margintop={30}>
+                  Por apenas  {product.price} reais
+                </Text>
+                <Text fontsize={2.5} margintop={50}>
+                  Perfeito para todas as ocasiões
+                </Text>
+                <Button2 onClick={() => addToCart()}>
+                  <Image2 src={addCart}></Image2>
+                  <Text fontsize={1.5}>Adicione ja ao Carrinho</Text>
+                </Button2>
+              </TextDiv>
+            </ProductDiv>
+          </Container>
+        );
+      } catch (error) {
+        
+      }
+
     }
 
   }
