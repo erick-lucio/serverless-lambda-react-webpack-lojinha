@@ -13,10 +13,10 @@ exports.handler = async (event) => {
       const getAllTodoDataQuery = todoRefs.map((ref) => {
         return q.Get(ref);
       });
-      return client.query(getAllTodoDataQuery).then((ret) => {
+      return client.query(getAllTodoDataQuery).then((res) => {
         return {
           statusCode: 200,
-          body: JSON.stringify(ret),
+          body: JSON.stringify(res),
         };
       });
     })

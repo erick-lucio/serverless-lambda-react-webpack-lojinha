@@ -8,7 +8,7 @@ exports.handler = async (event) => {
   });
   const data = JSON.parse(event.body);
   const id = event.queryStringParameters.id;
-  console.log(`Function 'todo-update' invoked. update id: ${id}`);
+  
   return client
     .query(q.Update(q.Ref(`classes/products/${id}`), { data }))
     .then((response) => {

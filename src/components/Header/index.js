@@ -8,7 +8,19 @@ import { context1 } from "../../Context";
 const Header = () => {
   const { stateCounter, dispatchCounter } = useContext(context1);
   const { stateCart, dispatchCart } = useContext(context1);
-
+  function getAllPurchases() {
+    return fetch("/.netlify/functions/read-all-purchases").then((response) => {
+      return response.json().then((json) => {
+        return json;
+      });
+    });
+  }
+  function logPurchases(){
+    getAllPurchases()
+      .then((dataPurchase) =>{
+        console.log(dataPurchase)
+      })
+  }
   useEffect(() => {}, []);
   return (
     <Container>
@@ -24,7 +36,7 @@ const Header = () => {
         ></img>
       </Link>
 
-      <Text fontsize={3.5} onClick={() => alert("Loja do Erick")}>
+      <Text fontsize={3.5} onClick={() => logPurchases()}>
         Erick Web Store
       </Text>
       <StyledLink to="/cart">

@@ -2,7 +2,7 @@ const faunadb = require("faunadb");
 const q = faunadb.query;
 
 exports.handler = async (event) => {
-  console.log("Function `todo-read-all` invoked");
+
 
   const client = new faunadb.Client({
     secret: process.env.SECRET_KEY_FAUNA,

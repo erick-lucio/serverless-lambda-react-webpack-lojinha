@@ -17,13 +17,7 @@ const Main = () => {
       });
     });
   }
-  function getAllPurchases() {
-    return fetch("/.netlify/functions/read-all-purchases").then((response) => {
-      return response.json().then((json) => {
-        return json;
-      });
-    });
-  }
+
 
   useEffect(() => {
     dispatchProducts({ type: "Clear" });
@@ -45,7 +39,7 @@ const Main = () => {
 
     getAllPurchases().then((response) => {});
   }, []);
-
+  
   const addToCart = (name, imgPath, price, refId) => {
     dispatchCounter({ type: "increment" });
     dispatchCart({
