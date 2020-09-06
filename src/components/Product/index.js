@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from "react";
 
 import {Container, ProductDiv,TextDiv, Text, Button ,Image ,Button2,Image2} from './styles';
 import imf from '../../assets/imgs/img_product (1).jpeg'
