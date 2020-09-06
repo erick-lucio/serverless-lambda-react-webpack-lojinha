@@ -61,7 +61,7 @@ const Product = (props) => {
     });
   };
 
-  if ((id_param = !undefined)) {
+  if ((id_param =! undefined)) {
     if (product == undefined) {
       return (
         <Container>
