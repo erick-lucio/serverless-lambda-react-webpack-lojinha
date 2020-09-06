@@ -55,15 +55,13 @@ const Main = () => {
   }
   function redirect(productId) {
     history.push({
-      pathname: "/product/"+productId,
-
+      pathname: "/product/" + productId,
     });
   }
- 
+
   return (
     <Container>
       {stateProducts.objects_products.map((obj, key) => {
-        
         return (
           <ProductDiv key={key}>
             <Image
