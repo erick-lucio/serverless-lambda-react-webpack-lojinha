@@ -61,7 +61,7 @@ const Product = (props) => {
     });
   };
 
-  if ((id_param = !undefined)) {
+  if (id_param =! undefined) {
     if (product == undefined) {
       return (
         <Container>
@@ -73,6 +73,7 @@ const Product = (props) => {
         </Container>
       );
     } else {
+     
       try {
         return (
           <Container>
@@ -96,39 +97,28 @@ const Product = (props) => {
         );
       } catch (error) {}
     }
+
   } else {
-    if (props.location.state == undefined) {
-      return (
-        <Container>
-          <ProductDiv>
-            <TextDiv>
-              <Text fontsize={4}>Produto não Encontrado</Text>
-            </TextDiv>
-          </ProductDiv>
-        </Container>
-      );
-    } else {
-      return (
-        <Container>
-          <ProductDiv>
-            <Image src={props.location.state.imgPath}></Image>
-            <TextDiv>
-              <Text fontsize={3}>{props.location.state.name}</Text>
-              <Text fontsize={2.5} margintop={30}>
-                Por apenas {props.location.state.price} reais
-              </Text>
-              <Text fontsize={2.5} margintop={50}>
-                Perfeito para todas as ocasiões
-              </Text>
-              <Button2 onClick={() => addToCart()}>
-                <Image2 src={addCart}></Image2>
-                <Text fontsize={1.5}>Adicione ja ao Carrinho</Text>
-              </Button2>
-            </TextDiv>
-          </ProductDiv>
-        </Container>
-      );
-    }
+        return (
+      <Container>
+        <ProductDiv>
+          <Image src={props.location.state.imgPath}></Image>
+          <TextDiv>
+            <Text fontsize={3}>{props.location.state.name}</Text>
+            <Text fontsize={2.5} margintop={30}>
+              Por apenas {props.location.state.price} reais
+            </Text>
+            <Text fontsize={2.5} margintop={50}>
+              Perfeito para todas as ocasiões
+            </Text>
+            <Button2 onClick={() => addToCart()}>
+              <Image2 src={addCart}></Image2>
+              <Text fontsize={1.5}>Adicione ja ao Carrinho</Text>
+            </Button2>
+          </TextDiv>
+        </ProductDiv>
+      </Container>
+    );
   }
 };
 
