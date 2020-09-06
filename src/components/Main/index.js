@@ -37,7 +37,7 @@ const Main = () => {
       });
     });
 
-    getAllPurchases().then((response) => {});
+    
   }, []);
   
   const addToCart = (name, imgPath, price, refId) => {
