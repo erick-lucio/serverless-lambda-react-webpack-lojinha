@@ -37,6 +37,8 @@ const Product = (props) => {
     .then((response)=>{
       import("../../assets/imgs/" + response.data.img_name)
         .then((img)=>{
+          console.log(response)
+          console.log(setProduct)
           setProduct({
             name:response.data.name,
             price:response.data.price,      
@@ -49,6 +51,10 @@ const Product = (props) => {
     })
     
   }, []);
+  useEffect(() => {
+
+    
+  }, [product]);
   const addToCart = () => {
     dispatchCounter({ type: "increment" });
     dispatchCart({
