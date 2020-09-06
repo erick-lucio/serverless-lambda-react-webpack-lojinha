@@ -62,8 +62,7 @@ const Main = () => {
       state: {
         name: productName,
         imgPath: productImg,
-        price: productPrice,
-        refId: productRef,
+        price: productPrice,        
       },
     });
   }
