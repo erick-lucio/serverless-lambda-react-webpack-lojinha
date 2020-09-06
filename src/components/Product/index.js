@@ -25,19 +25,23 @@ const Product = (props) => {
       .replace(/[^a-z]+/g, "")
       .substr(0, 35);
   }
-  function getProduct() {       
-    return fetch("/.netlify/functions/read-product?id="+id_param).then((response) => {
-      return response.json().then((json) => {
-        return json;
+  function getProduct() {  
+    try {
+      return fetch("/.netlify/functions/read-product?id="+id_param).then((response) => {
+        return response.json().then((json) => {
+          return json;
+        });
       });
-    });
+    } catch (error) {
+      
+    }
   }
   useEffect(() => {
     getProduct()
     .then((response)=>{
-      import("../../assets/imgs/" + response.data.img_name)
+      if(response.data != undefined){
+        import("../../assets/imgs/" + response.data.img_name)
         .then((img)=>{
-
           setProduct({
             name:response.data.product_name,
             price:response.data.price,      
@@ -45,14 +49,14 @@ const Product = (props) => {
           })
           
         })
+      }
+
 
       
     })
     
   }, []);
-  useEffect(() => {
-
-    
+  useEffect(() => {    
   }, [product]);
   const addToCart = () => {
     dispatchCounter({ type: "increment" });
