@@ -63,16 +63,16 @@ const Main = () => {
   function genId(){
     return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 35)
   }
-  function redirect(){
-    history.push({pathname:'/product',state:{detail:"opa meu vei"}})
+  function redirect(productName,productImg,productPrice,productRef){
+    history.push({pathname:'/product',state:{name:productName, imgPath:productImg, price:productPrice, refId:productRef}})
   }
   return (
     <Container>  
      
       {stateProducts.objects_products.map((obj, key) => {
         return (
-          <ProductDiv key={key} onClick={()=>redirect()}>
-            <Image src={obj.img_path} ></Image>
+          <ProductDiv key={key} >
+            <Image src={obj.img_path} onClick={()=>redirect(obj.name,obj.img_path,obj.price,genId())}></Image>
             <Text
               fontsize={2}
               style={{
@@ -94,7 +94,7 @@ const Main = () => {
                 height: "10%",
               }}
             >
-              R$:{obj.price}
+              R$:{obj.price}Reais
             </Text>
             <Button
               onClick={() =>
