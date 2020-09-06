@@ -91,13 +91,14 @@ const Product = (props) => {
       let product_condition = "Carregando Produto"
       function changeCondition(product_condition){
         
+        product_condition = "Produto Nao encontrado"
         return product_condition
       }
       return (
         <Container>
           <ProductDiv>           
             <TextDiv>
-              <Text fontsize={4}>{()=>changeCondition(product_condition)}</Text>
+              <Text fontsize={4}>{changeCondition(product_condition)}</Text>
             </TextDiv>
           </ProductDiv>
         </Container>
