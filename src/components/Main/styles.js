@@ -41,7 +41,7 @@ export const ProductDiv = styled.div`
   }
   flex-direction: column;
   margin-top: 50px;
-  flex: 1 1 150px;
+  flex: 1 1 200px;
   display: flex;
 
   border: 0.5px solid rgba(1, 2, 3, 0.5);
