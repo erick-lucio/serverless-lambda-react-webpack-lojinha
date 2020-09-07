@@ -100,18 +100,20 @@ export const TextDiv = styled.div`
   flex-direction: column;
   text-align: center;
   @media (max-width: 576px) {
-    padding-right: 70px;
-    padding-left: 70px;
+    padding-right: 5px;
+    padding-left: 5px;
     padding-top: 10px;
     padding-bottom: 30px;
     border-radius: 10px;
+    margin-top:40px;
   }
   @media (min-width: 577px) {
-    padding-right: 70px;
-    padding-left: 70px;
+    padding-right: 5px;
+    padding-left: 5px;
     padding-top: 10px;
     padding-bottom: 30px;
     border-radius: 10px;
+    margin-top:40px;
   }
   @media (min-width: 768px) {
     padding-right: 80px;
@@ -122,7 +124,7 @@ export const TextDiv = styled.div`
   }
 `;
 export const Button2 = styled.button`
-  width: 50%;
+
   align-self: center;
   align-items: center;
   display: flex;
@@ -133,8 +135,25 @@ export const Button2 = styled.button`
   border-radius: 5px;
   background: none;
   cursor: pointer;
+  @media (max-width: 576px) {
+    width: 85%;
+  }
+  @media (min-width: 577px) {
+    width: 65%;
+  }
+  @media (min-width: 768px) {
+    width: 50%;
+  }
 `;
 export const Image2 = styled.img`
   src: ${(props) => props.src};
-  width: 70px;
+  @media (max-width: 576px) {
+    width:50px;
+  }
+  @media (min-width: 577px) {
+    width:50px;
+  }
+  @media (min-width: 768px) {
+    width:80px;
+  }
 `;
