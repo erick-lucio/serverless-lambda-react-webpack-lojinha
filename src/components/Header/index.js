@@ -33,7 +33,7 @@ const Header = () => {
         <ImgPlace height={120} width={120} src={StoreImgIcon}></ImgPlace>
       </Link>
 
-      <Text fontsize={3.5} onClick={() => getAllPurchases()}>
+      <Text fontsize={3} onClick={() => getAllPurchases()}>
         Erick Web Store
       </Text>
       <StyledLink to="/cart">
