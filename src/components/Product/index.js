@@ -85,7 +85,7 @@ const Product = (props) => {
           <ProductDiv>
             <Image src={product.img_path} height={300} width={350}></Image>
             <TextDiv>
-              <Text fontsize={3}>{product.name}</Text>
+              <Text fontsize={3.5}>{product.name}</Text>
               <Text fontsize={2.5} margintop={30}>
                 Por apenas {product.price} reais
               </Text>
@@ -94,7 +94,7 @@ const Product = (props) => {
               </Text>
               <Button2 onClick={() => addToCart()}>
                 <Image2 src={addCart}></Image2>
-                <Text fontsize={1.5}>Adicione ja ao Carrinho</Text>
+                <Text fontsize={2.5}>Adicione ja ao Carrinho</Text>
               </Button2>
             </TextDiv>
           </ProductDiv>

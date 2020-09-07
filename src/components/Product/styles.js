@@ -23,13 +23,24 @@ export const ProductDiv = styled.div`
 
   padding-bottom: 20px;
   padding-top: 40px;
+  @media (max-width: 576px) {
+    flex-direction: column;
+  }
+  @media (min-width: 577px) {
+    flex-direction: column;
+  }
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+
 `;
 
 export const Text = styled.span`
   font-family: Arial, Helvetica, sans-serif;
 
   @media (max-width: 576px) {
-    font-size: ${(props) => props.fontsize * 0.5}rem;
+    font-size: ${(props) => props.fontsize * 0.6}rem;
   }
   @media (min-width: 577px) {
     font-size: ${(props) => props.fontsize * 0.7}rem;
@@ -85,14 +96,30 @@ export const TextDiv = styled.div`
   margin-right: auto;
   margin-left: auto;
   background-color: rgba(155, 155, 255, 0.6);
-  padding-right: 80px;
-  padding-left: 80px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
   text-align: center;
+  @media (max-width: 576px) {
+    padding-right: 70px;
+    padding-left: 70px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+  }
+  @media (min-width: 577px) {
+    padding-right: 70px;
+    padding-left: 70px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+  }
+  @media (min-width: 768px) {
+    padding-right: 80px;
+    padding-left: 80px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 10px;
+  }
 `;
 export const Button2 = styled.button`
   width: 50%;
