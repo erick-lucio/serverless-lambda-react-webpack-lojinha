@@ -20,6 +20,21 @@ export const Text = styled.span`
   font-family: Arial, Helvetica, sans-serif;
   font-size: ${(props) => props.fontsize}rem;
   margin-top: 15px;
+  @media (max-width: 576px) {
+    font-size: ${(props) => props.fontsize * 0.5}rem;
+  }
+  @media (min-width: 577px) {
+    font-size: ${(props) => props.fontsize * 0.7}rem;
+  }
+  @media (min-width: 768px) {
+    font-size: ${(props) => props.fontsize * 0.8}rem;
+  }
+  @media (min-width: 992px) {
+    font-size: ${(props) => props.fontsize * 0.9}rem;
+  }
+  @media (min-width: 1200px) {
+    font-size: ${(props) => props.fontsize}rem;
+  }
 `;
 export const ItensDiv = styled.div`
   border: 1px solid black;
@@ -31,6 +46,18 @@ export const ItensDiv = styled.div`
   justify-content: space-between;
   margin-top: 10px;
   background-color: rgb(183, 135, 250);
+  @media (max-width: 576px) {
+    
+    flex-direction: column;
+  }
+  @media (min-width: 577px) {
+    
+    flex-direction: column;
+  }
+  @media (min-width: 768px) {
+    
+    flex-direction: row;
+  }
 `;
 export const Button = styled.button`
   border: 1px solid black;

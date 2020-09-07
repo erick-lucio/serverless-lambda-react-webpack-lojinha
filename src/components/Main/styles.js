@@ -13,13 +13,37 @@ export const Container = styled.div`
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 100px;
+  @media (max-width: 576px) {
+   
+    flex-direction: column;
+  }
+  @media (min-width: 577px) {
+  
+    flex-direction: column;
+  }
+  @media (min-width: 768px) {
+   
+    flex-direction: row;
+  }
 `;
 export const ProductDiv = styled.div`
-  max-width: 23%;
+  @media (max-width: 576px) {
+    max-width:80%;
+ 
+  }
+  @media (min-width: 577px) {
+    max-width:80%;
+    
+  }
+  @media (min-width: 768px) {
+    max-width:23%;
+   
+  }
+  
   margin-top: 50px;
   flex: 1 1 250px;
   display: flex;
-  flex-direction: column;
+
   border: 0.5px solid rgba(1, 2, 3, 0.5);
   border-radius: 25px;
   margin-left: 10px;
@@ -64,24 +88,24 @@ export const Image = styled.img`
   border: 3px double rgb(0, 0, 0);
   cursor: pointer;
   @media (max-width: 576px) {
-    height: 25%;
-    width: 35%;
+    height: 50%;
+   
   }
   @media (min-width: 577px) {
     height: 40%;
-    width: 45%;
+   
   }
   @media (min-width: 768px) {
     height: 45%;
-    width: 50%;
+    
   }
   @media (min-width: 992px) {
     height: 50%;
-    width: 65%;
+    
   }
   @media (min-width: 1200px) {
     height: 50%;
-    width: 65%;
+    
   }
 `;
 export const ImgPlace = styled.img`
