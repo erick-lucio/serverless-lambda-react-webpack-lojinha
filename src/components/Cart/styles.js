@@ -40,3 +40,28 @@ export const Button = styled.button`
   border-radius: 50px;
   background-color: rgb(237, 242, 80);
 `;
+export const ImgPlace = styled.img`
+  cursor: ${(props) => props.cursor};
+  border-radius: ${(props) => props.borderRadius};
+  src: ${(props) => props.src};
+  @media (max-width: 576px) {
+    width: ${(props) => props.width * 0.8}px;
+    height: ${(props) => props.height * 0.8}px;
+  }
+  @media (min-width: 577px) {
+    width: ${(props) => props.width * 0.9}px;
+    height: ${(props) => props.height * 0.9}px;
+  }
+  @media (min-width: 768px) {
+    width: ${(props) => props.width}px;
+    height: ${(props) => props.height}px;
+  }
+  @media (min-width: 992px) {
+    width: ${(props) => props.width}px;
+    height: ${(props) => props.height}px;
+  }
+  @media (min-width: 1200px) {
+    width: ${(props) => props.width}px;
+    height: ${(props) => props.height}px;
+  }
+`;

@@ -37,6 +37,15 @@ export const ProductDiv = styled.div`
 export const Text = styled.span`
   font-family: Arial, Helvetica, sans-serif;
   font-size: ${(props) => props.fontsize}rem;
+  overflow-wrap: ${(props) => props.overflowWrap};
+  text-align: ${(props) => props.textAlign};
+  margin-top: ${(props) => props.marginTop};
+  align-self: ${(props) => props.alignSelf};
+  padding-left: ${(props) => props.paddingLeft};
+  color: ${(props) => props.color};
+  height: ${(props) => props.height};
+  width: ${(props) => props.width};
+  cursor: ${(props) => props.cursor};
 `;
 export const Button = styled.button`
   border: none;
@@ -45,6 +54,8 @@ export const Button = styled.button`
   margin-left: 15px;
   background-color: inherit;
   justify-content: flex-end;
+  margin-bottom: ${(props) => props.marginButtom};
+  height: ${(props) => props.height};
 `;
 export const Image = styled.img`
   height: 50%;
@@ -52,4 +63,49 @@ export const Image = styled.img`
   src: ${(props) => props.src};
   border: 3px double rgb(0, 0, 0);
   cursor: pointer;
+  @media (max-width: 576px) {
+    height: 25%;
+    width: 35%;
+  }
+  @media (min-width: 577px) {
+    height: 40%;
+    width: 45%;
+  }
+  @media (min-width: 768px) {
+    height: 45%;
+    width: 50%;
+  }
+  @media (min-width: 992px) {
+    height: 50%;
+    width: 65%;
+  }
+  @media (min-width: 1200px) {
+    height: 50%;
+    width: 65%;
+  }
+`;
+export const ImgPlace = styled.img`
+  cursor: ${(props) => props.cursor};
+  border-radius: ${(props) => props.borderRadius};
+  src: ${(props) => props.src};
+  @media (max-width: 576px) {
+    width: ${(props) => props.width * 0.8}px;
+    height: ${(props) => props.height * 0.8}px;
+  }
+  @media (min-width: 577px) {
+    width: ${(props) => props.width * 0.9}px;
+    height: ${(props) => props.height * 0.9}px;
+  }
+  @media (min-width: 768px) {
+    width: ${(props) => props.width}px;
+    height: ${(props) => props.height}px;
+  }
+  @media (min-width: 992px) {
+    width: ${(props) => props.width}px;
+    height: ${(props) => props.height}px;
+  }
+  @media (min-width: 1200px) {
+    width: ${(props) => props.width}px;
+    height: ${(props) => props.height}px;
+  }
 `;

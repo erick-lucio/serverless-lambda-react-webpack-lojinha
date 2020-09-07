@@ -30,14 +30,46 @@ export const StyledLink = styled(Link)`
     color: "none";
   }
 `;
-export const ImgPlace = styled.div`
-  background-image: url(${(props) => props.src});
-  background-position: center;
-  background-size: cover;
-  width: ${(props) => props.width}px;
-  height: ${(props) => props.height}px;
+export const ImgPlace = styled.img`
+  cursor: pointer;
+  src: ${(props) => props.src};
+  @media (max-width: 576px) {
+    width: ${(props) => props.width * 0.8}px;
+    height: ${(props) => props.height * 0.8}px;
+  }
+  @media (min-width: 577px) {
+    width: ${(props) => props.width * 0.9}px;
+    height: ${(props) => props.height * 0.9}px;
+  }
+  @media (min-width: 768px) {
+    width: ${(props) => props.width}px;
+    height: ${(props) => props.height}px;
+  }
+  @media (min-width: 992px) {
+    width: ${(props) => props.width}px;
+    height: ${(props) => props.height}px;
+  }
+  @media (min-width: 1200px) {
+    width: ${(props) => props.width}px;
+    height: ${(props) => props.height}px;
+  }
 `;
 export const Text = styled.span`
   font-family: Arial, Helvetica, sans-serif;
   font-size: ${(props) => props.fontsize}rem;
+  @media (max-width: 576px) {
+    font-size: ${(props) => props.fontsize * 0.5}rem;
+  }
+  @media (min-width: 577px) {
+    font-size: ${(props) => props.fontsize * 0.7}rem;
+  }
+  @media (min-width: 768px) {
+    font-size: ${(props) => props.fontsize * 0.8}rem;
+  }
+  @media (min-width: 992px) {
+    font-size: ${(props) => props.fontsize * 0.9}rem;
+  }
+  @media (min-width: 1200px) {
+    font-size: ${(props) => props.fontsize}rem;
+  }
 `;

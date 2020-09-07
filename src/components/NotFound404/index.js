@@ -7,10 +7,8 @@ const NotFound = (props) => {
     <Container>
       <ProductDiv>
         <TextDiv onClick={() => history.push("/")}>
-          <Text fontsize={4} >Pagina Não Encontrada</Text>
-          <Text fontsize={3} >
-            Voltar ao menu principal
-          </Text>
+          <Text fontsize={4}>Pagina Não Encontrada</Text>
+          <Text fontsize={3}>Voltar ao menu principal</Text>
         </TextDiv>
       </ProductDiv>
     </Container>

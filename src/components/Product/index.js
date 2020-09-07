@@ -68,8 +68,10 @@ const Product = (props) => {
       <Container>
         <ProductDiv>
           <TextDiv onClick={() => history.push("/")}>
-            <Text fontsize={4}>Produto não Encontrado</Text>
-            <Text fontsize={3} >
+            <Text fontsize={4} overcolor={true}>
+              Produto não Encontrado
+            </Text>
+            <Text fontsize={3} overcolor={true}>
               Voltar ao menu principal
             </Text>
           </TextDiv>
@@ -81,7 +83,7 @@ const Product = (props) => {
       return (
         <Container>
           <ProductDiv>
-            <Image src={product.img_path}></Image>
+            <Image src={product.img_path} height={300} width={350}></Image>
             <TextDiv>
               <Text fontsize={3}>{product.name}</Text>
               <Text fontsize={2.5} margintop={30}>

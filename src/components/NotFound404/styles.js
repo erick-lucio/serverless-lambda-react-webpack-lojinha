@@ -27,10 +27,24 @@ export const ProductDiv = styled.div`
 
 export const Text = styled.span`
   font-family: Arial, Helvetica, sans-serif;
-  font-size: ${(props) => props.fontsize}rem;
-  margin-top: ${(props) => props.margintop || 0}px;
+
+  @media (max-width: 576px) {
+    font-size: ${(props) => props.fontsize * 0.5}rem;
+  }
+  @media (min-width: 577px) {
+    font-size: ${(props) => props.fontsize * 0.7}rem;
+  }
+  @media (min-width: 768px) {
+    font-size: ${(props) => props.fontsize * 0.8}rem;
+  }
+  @media (min-width: 992px) {
+    font-size: ${(props) => props.fontsize * 0.9}rem;
+  }
+  @media (min-width: 1200px) {
+    font-size: ${(props) => props.fontsize}rem;
+  }
   &:hover {
-    color:rgba(155, 55, 255, 1);
+    color: rgba(155, 55, 255, 1);
   }
 `;
 export const Button = styled.button`
@@ -46,12 +60,15 @@ export const Image = styled.img`
   margin-top: 30px;
   src: ${(props) => props.src};
   border: 4px double rgb(0, 0, 0);
-
 `;
 export const TextDiv = styled.div`
-  margin-left: 300px;
+  margin-right: auto;
+  margin-left: auto;
   background-color: rgba(155, 155, 255, 0.6);
-  padding: 50px;
+  padding-right: 80px;
+  padding-left: 80px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;

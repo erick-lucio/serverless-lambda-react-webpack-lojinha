@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Container, ProductDiv, Text, Button, Image } from "./styles";
+import { Container, ProductDiv, Text, Button, Image, ImgPlace } from "./styles";
 import { useHistory } from "react-router-dom";
 import shopCart from "../../assets/icons/icons8-add-shopping-cart-64.png";
 import { context1 } from "../../Context";
@@ -70,24 +70,20 @@ const Main = () => {
             ></Image>
             <Text
               fontsize={2}
-              style={{
-                marginTop: 10,
-                overflowWrap: "anywhere",
-                textAlign: "center",
-                height: "40%",
-              }}
+              marginTop={"10px"}
+              overflowWrap={"anywhere"}
+              textAlign={"center"}
+              height={"40%"}
             >
               {obj.name}
             </Text>
             <Text
               fontsize={1.5}
-              style={{
-                marginTop: 10,
-                alignSelf: "flex-start",
-                paddingLeft: "20px",
-                color: "#373040",
-                height: "10%",
-              }}
+              marginTop={"10px"}
+              alignSelf={"flex-start"}
+              paddingLeft={"20px"}
+              color={"#373040"}
+              height={"10%"}
             >
               R$:{obj.price} Reais
             </Text>
@@ -95,13 +91,16 @@ const Main = () => {
               onClick={() =>
                 addToCart(obj.name, obj.img_path, obj.price, genId())
               }
-              style={{ marginButtom: "0", height: "auto" }}
+              marginButtom={"0"}
+              height={"auto"}
             >
               <Text fontsize={1.5}>
-                <img
+                <ImgPlace
                   src={shopCart}
-                  style={{ height: 60, width: "auto", cursor: "pointer" }}
-                ></img>
+                  height={"60"}
+                  width={"auto"}
+                  cursor={"pointer"}
+                ></ImgPlace>
               </Text>
             </Button>
           </ProductDiv>

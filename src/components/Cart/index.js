@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from "react";
 
-import { Container, Text, ItensDiv, Button } from "./styles";
+import { Container, Text, ItensDiv, Button, ImgPlace } from "./styles";
 import removeIcon from "../../assets/icons/icons8-remove-64.png";
 import { context1 } from "../../Context";
 import { useHistory } from "react-router-dom";
@@ -50,16 +50,19 @@ const Cart = () => {
           {stateCart.cart_products.map((cart_obj, key) => {
             return (
               <ItensDiv key={key}>
-                <img
+                <ImgPlace
                   src={cart_obj.img_path}
-                  style={{ height: 120, borderRadius: "5px" }}
-                ></img>
+                  height={120}
+                  borderRadius={"5px"}
+                ></ImgPlace>
                 <Text fontsize={2}>{cart_obj.name}</Text>
-                <img
+                <ImgPlace
                   src={removeIcon}
-                  style={{ height: 50, width: "auto", cursor: "pointer" }}
+                  height={50}
+                  width={"auto"}
+                  cursor={"pointer"}
                   onClick={() => removeProduct(cart_obj.ref_id)}
-                ></img>
+                ></ImgPlace>
               </ItensDiv>
             );
           })}
