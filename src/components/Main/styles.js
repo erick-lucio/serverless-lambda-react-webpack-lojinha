@@ -29,19 +29,19 @@ export const Container = styled.div`
 export const ProductDiv = styled.div`
   @media (max-width: 576px) {
     max-width:80%;
- 
+    flex-direction: column;
   }
   @media (min-width: 577px) {
     max-width:80%;
-    
+    flex-direction: column;
   }
   @media (min-width: 768px) {
     max-width:23%;
-   
+    flex-direction: column;
   }
-  
+  flex-direction: column;
   margin-top: 50px;
-  flex: 1 1 250px;
+  flex: 1 1 200px;
   display: flex;
 
   border: 0.5px solid rgba(1, 2, 3, 0.5);
