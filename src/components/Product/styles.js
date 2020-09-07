@@ -139,10 +139,10 @@ export const Button2 = styled.button`
     width: 85%;
   }
   @media (min-width: 577px) {
-    width: 65%;
+    width: 85%;
   }
   @media (min-width: 768px) {
-    width: 50%;
+    width: 85%;
   }
 `;
 export const Image2 = styled.img`
